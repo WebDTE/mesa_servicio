@@ -33,9 +33,25 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 }
 
 ?>
-
-<h1><?php echo __('Abrir Ticket');?></h1>
+<h1><?php echo __('Egresados');?></h1>
+<h2><?php echo __('Abrir Ticket');?></h2>
 <p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
+
+<form id="ticketForm" method="post" action="open_3.php" enctype="multipart/form-data">  
+    <?php csrf_token(); ?>
+                        
+    <div class="mb-3 mx-auto">
+        <select id="Select" class="form-select">
+            <option>Seleccionar tema de ayuda</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <input type="text" id="TextInput" class="form-control" placeholder="Nombre completo *">
+    </div>
+    <div class="mb-3">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico *">
+    </div>
+</form>
 
 <form id="ticketForm" method="post" action="open_3.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>
@@ -143,7 +159,23 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
         </tbody>
     </table>
     <hr/>
-    <p class="buttons" style="text-align:center;">
+    <div class="row text-center justify-content-center">
+        <div class="col-8">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4"><input type="submit" value="<?php echo __('Create Ticket'); ?>" class="btn btnh btn-mes-ser" onclick="return confirmEmail();"></div>
+                <div class="col-12 col-md-4"><input type="reset" name="reset" value="<?php echo __('Reset'); ?>" class="btn btnh btn-mes-ser"></div>
+                <div class="col-12 col-md-4"><input type="button" name="cancel" class="btn btnh btn-mes-ser" value="<?php echo __('Cancel'); ?>" onclick="javascript:
+                    $('.richtext').each(function() {
+                        var redactor = $(this).data('redactor');
+                        if (redactor && redactor.opts.draftDelete)
+                            redactor.plugin.draft.deleteDraft();
+                    });
+                    window.location.href='index.php';">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <p class="buttons" style="text-align:center;">
           <input type="submit" value="<?php echo __('Create Ticket');?>" class="btn" onclick="return confirmEmail();">
           <input type="reset" name="reset" value="<?php echo __('Reset');?>" class="btn">
           <input type="button" name="cancel" class="btn" value="<?php echo __('Cancel'); ?>" onclick="javascript:
@@ -153,5 +185,5 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                       redactor.plugin.draft.deleteDraft();
               });
               window.location.href='index.php';">
-    </p>
+    </p> -->
 </form>

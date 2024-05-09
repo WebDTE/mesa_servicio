@@ -25,28 +25,36 @@ if ($cfg->isClientEmailVerificationRequired()){
     ?>
 </p>
 
-<form action="login.php" method="post" id="clientLogin">
+<form action="login.php" method="post" id="clientLogin" >
     <?php csrf_token(); ?>
     
-<div>
+<div class="my-5">
     <div>
         <div><strong><?php echo Format::htmlchars($errors['login']); ?></strong></div>
-        <div>
+        <div class="mb-3">
+            <input id="email" placeholder="<?php echo __('e.g. john.doe@dominio.com'); ?>" type="text" name="lemail" size="30" value="<?php echo $email; ?>" class="form-control">            
+        </div>
+        <!-- <div>
             <label for="email"><?php echo __('Email Address'); ?>:
             <input id="email" placeholder="<?php echo __('e.g. john.doe@dominio.com'); ?>" type="text"
                 name="lemail" size="30" value="<?php echo $email; ?>" class="nowarn"></label>
+        </div> -->
+        <div class="mb-3">
+            <input id="ticketno" placeholder="<?php echo __('e.g. 051243'); ?>" type="text" name="lemail" size="30" value="<?php echo $ticketid; ?>" class="form-control">
+            
         </div>
-        <div>
+        <!-- <div>
             <label for="ticketno"><?php echo __('Ticket Number'); ?>:
             <input id="ticketno" type="text" name="lticket" placeholder="<?php echo __('e.g. 051243'); ?>"
                 size="30" value="<?php echo $ticketid; ?>" class="nowarn"></label>
-        </div>
-        <p>
-            <input class="btn" type="submit" value="<?php echo $button; ?>">
+        </div> -->
+        <p class="text-center mb-5">
+            <input class="btn btnh btn-mes-ser mx-auto" type="submit" value="<?php echo $button; ?>">
+            <!-- <input class="btn" type="submit" value="<?php echo $button; ?>"> -->
         </p>
     </div>
     
-    <div class="instructions">
+    <div class="instructions mb-3">
         <?php if ($cfg && $cfg->getClientRegistrationMode() !== 'disabled') { ?>
                 <?php echo __('Have an account with us?'); ?>
                 <a href="login.php"><?php echo __('Sign In'); ?></a> 

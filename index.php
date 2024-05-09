@@ -15,13 +15,38 @@ require(CLIENTINC_DIR.'header.inc.php');
                 <p>
                     <?php echo $page->getBodyWithImages(); ?>
                 </p>
-        <?php   }
-            ?>
+        <?php } ?>
         </div>
     </div>
 
     <div class="clear"></div>
-    <div class="row">
+
+    <div class="row mt-5">
+        <div class="col-12 text-center mb-4">
+          <a href="<?php echo ROOT_PATH; ?>open_1.php" class="btn btnh btn-mes-ser ">Aspirantes</a>
+        </div>
+
+        <div class="col-12 text-center mb-4">
+          <a href="<?php echo ROOT_PATH; ?>open_2.php" class="btn btnh btn-mes-ser ">Estudiantes</a>
+        </div>
+
+        <div class="col-12 text-center mb-4">
+          <a href="<?php echo ROOT_PATH; ?>open_3.php" class="btn btnh btn-mes-ser ">Egresados</a>
+        </div>
+
+        <div class="col-12 text-center mb-4">
+          <a href="<?php echo ROOT_PATH; ?>open_4.php" class="btn btnh btn-mes-ser ">Instituciones externas</a>
+        </div>
+        
+      </div>   
+      
+      <div class="row">
+        <div class="col-12 mt-5 text-center">
+          <a class="link" href="<?php echo ROOT_PATH; ?>kb/index.php">Preguntas frecuentes</a>
+        </div>
+      </div>      
+
+    <!-- <div class="row">
       <div class="col-12 col-md-3 mb-3">
         <div class="rcorners bg-prepa-verde">
             <a href="<?php echo ROOT_PATH; ?>open_1.php">
@@ -79,7 +104,7 @@ require(CLIENTINC_DIR.'header.inc.php');
            </a>
        </div>
       </div>
-    </div>
+    </div> -->
 </div>
 
 <?php require(CLIENTINC_DIR.'footer.inc.php'); ?>
