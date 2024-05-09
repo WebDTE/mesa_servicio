@@ -34,7 +34,7 @@ $isCreate = (isset($options['mode']) && $options['mode'] == 'create');
         }
         ?>
         <tr>
-            <td colspan="2" style="padding-top:10px;">
+            <td colspan="2" >
             <?php if (!$field->isBlockLevel()) { ?>
                 <label for="<?php echo $field->getFormName(); ?>"><span class="<?php
                     if ($field->isRequiredForUsers()) echo 'required'; ?>">

@@ -9,11 +9,11 @@ $(document).ready(function(){
     $('table.list tbody tr:odd').addClass('odd');
 
     //Overlay
-    $('#overlay').css({
+   /*  $('#overlay').css({
         opacity : 0.3,
         top     : 0,
         left    : 0
-     });
+     }); */
 
     /* loading ... */
     $("#loading").css({

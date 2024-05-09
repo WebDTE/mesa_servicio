@@ -38,7 +38,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 <p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
 <p style="color:red"><?php echo __('Se requiere utilizar el correo registrado como principal, en caso de haberlo modificado o perdido, debe solicitarse la "Actualización de correo electrónico" en Temas de ayuda.');?></p>
 
-<form id="ticketForm" method="post" action="open_2.php" enctype="multipart/form-data">  
+<form id="ticketForm" method="post" action="open_2.php" enctype="multipart/form-data" class="d-none">  
     <?php csrf_token(); ?>
                         
     <div class="mb-3 mx-auto">
@@ -57,12 +57,12 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 <form id="ticketForm" method="post" action="open_2.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>
     <input type="hidden" name="a" value="open">
-    <table width="1000" cellpadding="1" cellspacing="0" border="0">
+    <table cellpadding="1" cellspacing="0" border="0" class="mx-auto for-tabla">
         <tbody>
             <tr>
                 <td colspan="2"><hr />
-                    <div class="form-header" style="margin-bottom:0.5em"><b>
-                        <?php echo __('Help Topic'); ?></b></div>
+                    <!-- <div class="form-header" style="margin-bottom:0.5em"><b>
+                        <?php echo __('Help Topic'); ?></b></div> -->
                 </td>
             </tr>
             <tr>
@@ -161,11 +161,11 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
     </table>
     <hr/>
     <div class="row text-center justify-content-center">
-        <div class="col-8">
+        <div class="col-12 col-md-8">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-4"><input type="submit" value="<?php echo __('Create Ticket'); ?>" class="btn btnh btn-mes-ser" onclick="return confirmEmail();"></div>
-                <div class="col-12 col-md-4"><input type="reset" name="reset" value="<?php echo __('Reset'); ?>" class="btn btnh btn-mes-ser"></div>
-                <div class="col-12 col-md-4"><input type="button" name="cancel" class="btn btnh btn-mes-ser" value="<?php echo __('Cancel'); ?>" onclick="javascript:
+                <div class="col-12 col-md-4 mb-3"><input type="submit" value="<?php echo __('Create Ticket'); ?>" class="btn btnh btn-mes-ser" onclick="return confirmEmail();"></div>
+                <div class="col-12 col-md-4 mb-3"><input type="reset" name="reset" value="<?php echo __('Reset'); ?>" class="btn btnh btn-mes-ser"></div>
+                <div class="col-12 col-md-4 mb-3"><input type="button" name="cancel" class="btn btnh btn-mes-ser" value="<?php echo __('Cancel'); ?>" onclick="javascript:
                     $('.richtext').each(function() {
                         var redactor = $(this).data('redactor');
                         if (redactor && redactor.opts.draftDelete)

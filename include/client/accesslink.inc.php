@@ -25,22 +25,22 @@ if ($cfg->isClientEmailVerificationRequired()){
     ?>
 </p>
 
-<form action="login.php" method="post" id="clientLogin" >
+<form action="login.php" method="post" id="clientLogin">
     <?php csrf_token(); ?>
     
 <div class="my-5">
     <div>
         <div><strong><?php echo Format::htmlchars($errors['login']); ?></strong></div>
-        <div class="mb-3">
-            <input id="email" placeholder="<?php echo __('e.g. john.doe@dominio.com'); ?>" type="text" name="lemail" size="30" value="<?php echo $email; ?>" class="form-control">            
+        <div class="mb-3 for-tabla">
+            <input id="email" placeholder="<?php echo __('e.g. john.doe@dominio.com'); ?>" name="lemail" size="30" value="<?php echo $email; ?>" class="form-control">            
         </div>
         <!-- <div>
             <label for="email"><?php echo __('Email Address'); ?>:
             <input id="email" placeholder="<?php echo __('e.g. john.doe@dominio.com'); ?>" type="text"
                 name="lemail" size="30" value="<?php echo $email; ?>" class="nowarn"></label>
         </div> -->
-        <div class="mb-3">
-            <input id="ticketno" placeholder="<?php echo __('e.g. 051243'); ?>" type="text" name="lemail" size="30" value="<?php echo $ticketid; ?>" class="form-control">
+        <div class="mb-3 for-tabla">
+            <input id="ticketno" placeholder="<?php echo __('e.g. 051243'); ?>"  name="lemail" size="30" value="<?php echo $ticketid; ?>" class="form-control">
             
         </div>
         <!-- <div>

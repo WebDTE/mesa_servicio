@@ -39,11 +39,11 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
 <h1><?php echo __('Aspirantes'); ?></h1>
 <h2><?php echo __('Abrir Ticket'); ?></h2>
 <p><?php echo __('Please fill in the form below to open a new ticket.'); ?></p>
-<form id="ticketForm" method="post" action="open_1.php" enctype="multipart/form-data">
+<form id="ticketForm" method="post" action="open_1.php" enctype="multipart/form-data" class="d-none">
     <?php csrf_token(); ?>
     <input type="hidden" name="a" value="open">
-    
-    <div class="mb-3">               
+
+    <div class="mb-3">
         <select id="topicId" name="topicId" class="form-select" onchange="javascript:
                                 var data = $(':input[name]', '#dynamic-form').serialize();
                                     $.ajax('ajax.php/form/help-topic/' + this.value,{
@@ -70,7 +70,7 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
                                         }
                                 });">
             <option value="" selected="selected">
-                &mdash; <?php echo __('Seleccionar temas de ayuda'); ?> &mdash;
+                &mdash; <?php echo __('Select a Help Topic'); ?> &mdash;
             </option>
             <?php
             $topics = Topic::getHelpTopicsByParent(23);
@@ -84,34 +84,49 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
         <font class="error text-center">&nbsp;<?php echo $errors['topicId']; ?></font>
         <div id="descripcionTema"></div>
     </div>
-    
 
+    <?php
+        if (!$thisclient) {
+            $uform = UserForm::getUserForm()->getForm($_POST);
 
+            if ($_POST)
+                $uform->isValid();
+
+            $uform->render(array('staff' => false, 'mode' => 'create'));
+        } else { ?>
     <div class="mb-3">
-        <input type="text" id="TextInput" class="form-control" placeholder="Nombre completo *">  
-              
+       <!--  <input type="text" id="TextInput" class="form-control" placeholder="Nombre completo *"> -->
+       <p>
+       <?php echo __('Client'); ?>:
+        <?php echo Format::htmlchars($thisclient->getName()); ?>
+       </p>
     </div>
     <div class="mb-3">
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico *">
+        <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico *"> -->
+        <p>
+        <?php echo __('Email'); ?>:
+                    <?php echo $thisclient->getEmail(); ?>
+        </p>
     </div>
+    <?php } ?>
+
     <button type="submit" class="btn btn-primary d-none">Submit</button>
 </form>
 
 <form id="ticketForm" method="post" action="open_1.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>
     <input type="hidden" name="a" value="open">
-    <table width="560" cellpadding="1" cellspacing="0" border="0">
+    <table cellpadding="1" cellspacing="0" border="0" class="mx-auto for-tabla">
         <tbody>
-            <tr>
-                <td colspan="2">
-                    <hr />
-                    <div class="form-header" style="margin-bottom:0.5em"><b>
-                            <?php echo __('Help Topic'); ?></b></div>
+        <tr>
+                <td colspan="2"><hr />
+                    <!-- <div class="form-header" style="margin-bottom:0.5em"><b>
+                        <?php echo __('Help Topic'); ?></b></div> -->
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <select id="topicId" name="topicId" class="form-control" onchange="javascript:
+                    <select id="topicId" name="topicId" class="form-select" onchange="javascript:
                                 var data = $(':input[name]', '#dynamic-form').serialize();
                                     $.ajax('ajax.php/form/help-topic/' + this.value,{
                                         data: data,
@@ -213,13 +228,13 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
         </tbody>
     </table>
     <hr />
-    
+
     <div class="row text-center justify-content-center">
-        <div class="col-8">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-4"><input type="submit" value="<?php echo __('Create Ticket'); ?>" class="btn btnh btn-mes-ser" onclick="return confirmEmail();"></div>
-                <div class="col-12 col-md-4"><input type="reset" name="reset" value="<?php echo __('Reset'); ?>" class="btn btnh btn-mes-ser"></div>
-                <div class="col-12 col-md-4"><input type="button" name="cancel" class="btn btnh btn-mes-ser" value="<?php echo __('Cancel'); ?>" onclick="javascript:
+        <div class="col-12 col-md-8">
+            <div class="row justify-content-center text-center">
+                <div class="col-12 col-md-4 mb-3"><input type="submit" value="<?php echo __('Create Ticket'); ?>" class="btn btnh btn-mes-ser" onclick="return confirmEmail();"></div>
+                <div class="col-12 col-md-4 mb-3"><input type="reset" name="reset" value="<?php echo __('Reset'); ?>" class="btn btnh btn-mes-ser"></div>
+                <div class="col-12 col-md-4 mb-3"><input type="button" name="cancel" class="btn btnh btn-mes-ser" value="<?php echo __('Cancel'); ?>" onclick="javascript:
                     $('.richtext').each(function() {
                         var redactor = $(this).data('redactor');
                         if (redactor && redactor.opts.draftDelete)

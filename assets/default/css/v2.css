@@ -62,13 +62,14 @@ a {
     border: 1px solid #999;
 }
 .btn-formato{
-    color: #666;
+    color: #333;
 }
 
-input#_8d6370fff54e71, input#_f3e9dff1a6f43b, .form-control, select{
+.for-tabla #dynamic-form, .for-tabla .form-control, .for-tabla select, input#_2e02364488d363,#_933392f6ac2180{
     background-color: #F5F5F5!important;
     color: #888!important;
     max-width: 560px;
+    width: 560px;
     margin:0 auto;
     height: 50px;
     border-radius: 0px !important;
@@ -106,3 +107,33 @@ input#_8d6370fff54e71, input#_f3e9dff1a6f43b, .form-control, select{
     border-radius: 15px!important;
     box-shadow: 4px 4px 7px 0 rgba(20, 20, 20, 0.3);
 }
+
+
+#topicId{
+ width: 560px;
+ max-width: 560px;
+ margin: 0;
+
+}
+
+input#_3f3a3b8ce15858, .for-tabla input[type="text"]{
+    background-color: #F5F5F5!important;
+    color: #888!important;    
+    width: 200px;
+    margin:0 auto;
+    height: 50px;
+    border-radius: 0px !important;
+    border: 0px!important;
+    border-bottom:2px solid #7C2C82!important;
+    text-align: center;}
+@media (max-width: 575.98px) { 
+
+#topicId{
+    width: 340px;
+    max-width: 340px;
+   }
+   .for-tabla input,.for-tabla #dynamic-form, .for-tabla .form-control, .for-tabla select,input#_2e02364488d363,#_933392f6ac2180{
+    width: 340px;
+    max-width: 340px;
+   }
+ }

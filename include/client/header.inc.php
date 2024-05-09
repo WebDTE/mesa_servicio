@@ -37,10 +37,9 @@
     <meta name="keywords" content="osTicket, Customer support system, support ticket system">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/osticket.css?cc2f481" media="screen"/>
+    <!-- <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/osticket.css?cc2f481" media="screen"/> -->
     <!-- <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/theme.css?cc2f481" media="screen"/> -->
-    <link rel='stylesheet' id='estilos-css' href='https://prepaenlinea.sep.gob.mx/wp-content/themes/PL-SEP-2024/css/css.min.css?ver=6.4.1' type='text/css' media='all' />
-    <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/v2.css?cc2f481" media="screen"/>
+    
     <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/print.css?cc2f481" media="print"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>scp/css/typeahead.css?cc2f481" media="screen" />
     <link type="text/css" href="<?php echo ROOT_PATH; ?>css/ui-lightness/jquery-ui-1.10.3.custom.min.css?cc2f481" rel="stylesheet" media="screen" />
@@ -52,6 +51,8 @@
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css?cc2f481"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css?cc2f481"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/select2.min.css?cc2f481"/>
+    <link rel='stylesheet' id='estilos-css' href='https://prepaenlinea.sep.gob.mx/wp-content/themes/PL-SEP-2024/css/css.min.css?ver=6.4.1' type='text/css' media='all' />
+    <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/v2.css?cc2f481" media="screen"/>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-3.5.1.min.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.12.1.custom.min.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-timepicker-addon.js?cc2f481"></script>
@@ -408,7 +409,7 @@
                 <div class="col-12 col-md-4">
                     <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>"><div class="titulo">MESA DE SERVICIO<br><span>PREPA EN LÍNEA-SEP</span></div></a>
                 </div>
-                <div class="col-12 col-md-4 text-end">
+                <div class="col-12 col-md-4 text-center text-md-end">
                     <a href="view.php" class="btn btnh btn-consulta mb-3">Consulta ticket</a>
                     <a href="ta/temasAyuda.html" class="btn btnh btn-formato mb-3">Formatos por tema</a>
                 </div>
