@@ -65,7 +65,7 @@ a {
     color: #333;
 }
 
-.for-tabla input, .for-tabla select/* .for-tabla #dynamic-form, .for-tabla .form-control, .for-tabla select, input#_2e02364488d363,#_933392f6ac2180,input#_b908af3211c7d3,#_e632294661de59 */{
+.for-tabla input, .for-tabla select{
     background-color: #F5F5F5!important;
     color: #888!important;
     max-width: 560px;
@@ -116,7 +116,7 @@ a {
 
 }
 
-.for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="3ce820b3d8815c-ext"]{
+.for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 200px;
 }
 @media (max-width: 575.98px) { 
@@ -125,11 +125,11 @@ a {
     width: 340px;
     max-width: 340px;
    }
-   input, .for-tabla select/* .for-tabla input,.for-tabla #dynamic-form, .for-tabla .form-control, .for-tabla select,input#_2e02364488d363,#_933392f6ac2180,#_b908af3211c7d3,input#_b908af3211c7d3,#_e632294661de59 */{
+   .for-tabla select, .for-tabla input{
     width: 340px;
     max-width: 340px;
    }
-   .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="5c1916366f0d69-ext"]{
+   .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 120px;
    }
  }
