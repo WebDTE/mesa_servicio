@@ -1,5 +1,5 @@
 <div class="row">
-<div class="span8">
+<div class="col-12 col-md-8">
 <?php
     $categories = Category::objects()
         ->exclude(Q::any(array(
@@ -38,7 +38,7 @@
 
             $count = $C->faq_count + $C->children_faq_count;
             ?>
-            <li><i></i>
+            <li><i class="far fa-list-alt"></i>
             <div style="margin-left:45px">
             <h4><?php echo sprintf('<a href="faq.php?cid=%d">%s %s</a>',
                 $C->getId(), Format::htmlchars($C->getLocalName()),
@@ -78,7 +78,7 @@
     }
 ?>
 </div>
-<div class="span4">
+<div class="col-12 col-md-8">
     <div class="sidebar">
     <div class="searchbar">
         <form method="get" action="faq.php" class="for-tabla">

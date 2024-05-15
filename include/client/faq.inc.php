@@ -5,7 +5,7 @@ $category=$faq->getCategory();
 
 ?>
 <div class="row">
-<div class="span8">
+<div class="col-12 col-md-8">
 
 <h1><?php echo __('Frequently Asked Question');?></h1>
 <div id="breadcrumbs" style="padding-top:2px;">
@@ -27,17 +27,17 @@ $category=$faq->getCategory();
 </div>
 </div>
 
-<div class="span4 pull-right">
+<div class="col-12 col-md-4">
 <div class="sidebar">
 <div class="searchbar">
-    <form method="get" action="faq.php">
+    <form method="get" action="faq.php" class="for-tabla">
     <input type="hidden" name="a" value="search"/>
     <input type="text" name="q" class="search" placeholder="<?php
         echo __('Search our knowledge base'); ?>"/>
     <input type="submit" style="display:none" value="search"/>
     </form>
 </div>
-<div class="content"><?php
+<div class="content for-tabla"><?php
     if ($attachments = $faq->getLocalAttachments()->all()) { ?>
 <section>
     <strong><?php echo __('Attachments');?>:</strong>

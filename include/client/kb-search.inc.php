@@ -1,5 +1,5 @@
 <div class="row">
-<div class="span8">
+<div class="col-12 col-md-8">
     <h1><?php echo __('Frequently Asked Questions');?></h1>
     <div><strong><?php echo __('Search Results'); ?></strong></div>
 <?php
@@ -19,7 +19,7 @@
 ?>
 </div>
 
-<div class="span4">
+<div class="col-12 col-md4">
     <div class="sidebar">
     <div class="searchbar">
         <form method="get" action="faq.php" class="for-tabla">
