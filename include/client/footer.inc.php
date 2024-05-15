@@ -154,7 +154,7 @@
             <?php echo __('https://mesadeservicio.prepaenlinea.mx'); ?> -
             <?php echo __('All rights reserved.'); ?></p>
     </div> -->
-<div id="overlay"></div>
+
 
 <!-- <div id="loading">
     <h4><?php echo __('Porfavor espera!');?></h4>
