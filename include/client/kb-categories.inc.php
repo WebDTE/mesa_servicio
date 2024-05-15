@@ -78,9 +78,9 @@
     }
 ?>
 </div>
-<div class="col-12 col-md-8">
+<div class="col-12 col-md-4">
     <div class="sidebar">
-    <div class="searchbar">
+    <div class="searchbar text-center">
         <form method="get" action="faq.php" class="for-tabla">
         <input type="hidden" name="a" value="search"/>
         <select name="topicId"  style="width:100%;max-width:100%"
@@ -98,9 +98,9 @@ foreach ($topics as $T) { ?>
         </form>
     </div>
     <br/>
-    <div class="content for-tabla">
+    <div class="content for-tabla text-center">
         <section>
-            <div><?php echo __('Other Resources'); ?></div>
+            <div class="catt"><?php echo __('Other Resources'); ?></div>
         </section>
     </div>
     </div>

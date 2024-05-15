@@ -126,6 +126,10 @@ a {
 .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 200px;
 }
+.fot-tabla input.search{
+    width: 380px;
+    margin-bottom: 1em;
+}
 
 .media-body a, #faq a{
     color: #7C2C82;
@@ -150,6 +154,11 @@ ul#kb {
     list-style: none;
 }
 
+.catt {
+    font-weight: 600;
+    background-color: #fff;
+    padding: 0 1em;
+}
 
 @media (max-width: 575.98px) { 
 
@@ -163,5 +172,8 @@ ul#kb {
    }
    .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 120px;
+   }
+   .fot-tabla input.search{
+    width: 320px;
    }
  }

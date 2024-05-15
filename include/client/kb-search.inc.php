@@ -21,7 +21,7 @@
 
 <div class="col-12 col-md4">
     <div class="sidebar">
-    <div class="searchbar">
+    <div class="searchbar text-center">
         <form method="get" action="faq.php" class="for-tabla">
         <input type="hidden" name="a" value="search"/>
         <input type="text" name="q" class="search" placeholder="<?php
@@ -29,9 +29,9 @@
         <input type="submit" style="display:none" value="search"/>
         </form>
     </div>
-    <div class="content for-tabla">
+    <div class="content for-tabla text-center">
         <section>
-            <div ><?php echo __('Help Topics'); ?></div>
+            <div class="catt"><?php echo __('Help Topics'); ?></div>
 <?php
 foreach (Topic::objects()
     ->annotate(array('faqs_count'=>SqlAggregate::count('faqs')))
@@ -42,7 +42,7 @@ foreach (Topic::objects()
 <?php } ?>
         </section>
         <section>
-            <div class="header"><?php echo __('Categories'); ?></div>
+            <div class="catt"><?php echo __('Categories'); ?></div>
 <?php
 foreach (Category::objects()
     ->exclude(Q::any(array('ispublic'=>Category::VISIBILITY_PRIVATE)))
