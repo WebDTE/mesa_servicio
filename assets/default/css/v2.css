@@ -126,7 +126,7 @@ a {
 .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 200px;
 }
-.fot-tabla input.search{
+.fot-tabla input .search, input[name="q"]{
     width: 380px;
     margin-bottom: 1em;
 }
@@ -173,7 +173,7 @@ ul#kb {
    .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 120px;
    }
-   .fot-tabla input.search{
+   .fot-tabla input .search, input[name="q"] {
     width: 320px;
    }
  }

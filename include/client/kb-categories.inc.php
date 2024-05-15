@@ -98,9 +98,9 @@ foreach ($topics as $T) { ?>
         </form>
     </div>
     <br/>
-    <div class="content for-tabla text-center">
+    <div class="content for-tabla ">
         <section>
-            <div class="catt"><?php echo __('Other Resources'); ?></div>
+            <div class="catt text-center"><?php echo __('Other Resources'); ?></div>
         </section>
     </div>
     </div>

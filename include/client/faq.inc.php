@@ -29,7 +29,7 @@ $category=$faq->getCategory();
 
 <div class="col-12 col-md-4">
 <div class="sidebar">
-<div class="searchbar text-center">
+<div class="searchbar mb-3">
     <form method="get" action="faq.php" class="for-tabla">
     <input type="hidden" name="a" value="search"/>
     <input type="text" name="q" class="search" placeholder="<?php
@@ -42,7 +42,7 @@ $category=$faq->getCategory();
 <section>
     <strong><?php echo __('Attachments');?>:</strong>
 <?php foreach ($attachments as $att) { ?>
-    <div class="catt">
+    <div class="catt text-center">
     <a href="<?php echo $att->file->getDownloadUrl(['id' => $att->getId()]);
     ?>" class="no-pjax">
         <i class="icon-file"></i>
@@ -56,7 +56,7 @@ if ($faq->getHelpTopics()->count()) { ?>
 <section>
     <strong><?php echo __('Help Topics'); ?></strong>
 <?php foreach ($faq->getHelpTopics() as $T) { ?>
-    <div class="catt"><?php echo $T->topic->getFullName(); ?></div>
+    <div class="catt text-center"><?php echo $T->topic->getFullName(); ?></div>
 <?php } ?>
 </section>
 <?php }
