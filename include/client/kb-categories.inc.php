@@ -81,7 +81,7 @@
 <div class="span4">
     <div class="sidebar">
     <div class="searchbar">
-        <form method="get" action="faq.php">
+        <form method="get" action="faq.php" class="for-tabla">
         <input type="hidden" name="a" value="search"/>
         <select name="topicId"  style="width:100%;max-width:100%"
             onchange="javascript:this.form.submit();">
@@ -98,9 +98,9 @@ foreach ($topics as $T) { ?>
         </form>
     </div>
     <br/>
-    <div class="content">
+    <div class="content for-tabla">
         <section>
-            <div class="header"><?php echo __('Other Resources'); ?></div>
+            <div><?php echo __('Other Resources'); ?></div>
         </section>
     </div>
     </div>

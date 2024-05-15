@@ -22,16 +22,16 @@
 <div class="span4">
     <div class="sidebar">
     <div class="searchbar">
-        <form method="get" action="faq.php">
+        <form method="get" action="faq.php" class="for-tabla">
         <input type="hidden" name="a" value="search"/>
         <input type="text" name="q" class="search" placeholder="<?php
             echo __('Search our knowledge base'); ?>"/>
         <input type="submit" style="display:none" value="search"/>
         </form>
     </div>
-    <div class="content">
+    <div class="content for-tabla">
         <section>
-            <div class="header"><?php echo __('Help Topics'); ?></div>
+            <div ><?php echo __('Help Topics'); ?></div>
 <?php
 foreach (Topic::objects()
     ->annotate(array('faqs_count'=>SqlAggregate::count('faqs')))

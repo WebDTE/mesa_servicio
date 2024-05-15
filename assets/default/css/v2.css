@@ -12,11 +12,16 @@ h1{
     text-align: center;
 }
 h2{
-    font-size: 26px;
+    font-size: 28px;
     text-align: left;
 }
 h6{
     font-size: 20px;
+    font-weight: 300;
+}
+h5 a{
+    font-size: 22px;
+    color: #7C2C82;
     font-weight: 300;
 }
 .titulo{
@@ -34,6 +39,7 @@ h6{
 }
 a {
     text-decoration: none;
+    color: #7C2C82;
 }
 .btnh{
     line-height: 16px;
@@ -120,6 +126,23 @@ a {
 .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 200px;
 }
+
+.media-body a, #faq a{
+    color: #7C2C82;
+    text-decoration: underline;
+}
+
+#faq .bg-light{
+    border-radius: 7px !important;
+    box-shadow: 2px 2px 3px 0 rgba(20, 20, 20, 0.3);
+    padding: 1em !important;
+    margin: .5em 0;
+}
+.thread-body{
+    border-radius: 7px !important;
+    box-shadow: 2px 2px 3px 0 rgba(20, 20, 20, 0.3);   
+}
+
 @media (max-width: 575.98px) { 
 
     #topicId{

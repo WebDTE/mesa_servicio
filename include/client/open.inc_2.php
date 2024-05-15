@@ -38,21 +38,6 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 <p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
 <p style="color:red"><?php echo __('Se requiere utilizar el correo registrado como principal, en caso de haberlo modificado o perdido, debe solicitarse la "Actualización de correo electrónico" en Temas de ayuda.');?></p>
 
-<form id="ticketForm" method="post" action="open_2.php" enctype="multipart/form-data" class="d-none">  
-    <?php csrf_token(); ?>
-                        
-    <div class="mb-3 mx-auto">
-        <select id="Select" class="form-select">
-            <option>Seleccionar tema de ayuda</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <input type="text" id="TextInput" class="form-control" placeholder="Nombre completo *">
-    </div>
-    <div class="mb-3">
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico *">
-    </div>
-</form>
 
 <form id="ticketForm" method="post" action="open_2.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>
@@ -149,7 +134,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                 <td>
                     <span class="captcha"><img src="captcha.php" border="0" align="left"></span>
                     &nbsp;&nbsp;
-                    <input id="captcha" type="text" name="captcha" size="6" autocomplete="off">
+                    <input id="captcha" type="text" name="captcha" size="6" autocomplete="off"><br>
                     <em><?php echo __('Enter the text shown on the image.');?></em>
                     <font class="error">*&nbsp;<?php echo $errors['captcha']; ?></font>
                 </td>

@@ -403,7 +403,7 @@
             <div class="row">
                 <div class="col-12 col-md-4 logo">
                     <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>">
-                        <img src="images/logo.png" alt="<?php echo $ost->getConfig()->getTitle(); ?>">
+                        <img src="<?php echo ROOT_PATH; ?>images/logo.png" alt="<?php echo $ost->getConfig()->getTitle(); ?>">
                     </a>
                 </div>
                 <div class="col-12 col-md-4">

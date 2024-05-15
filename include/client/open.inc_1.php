@@ -39,79 +39,7 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
 <h1><?php echo __('Aspirantes'); ?></h1>
 <h2><?php echo __('Abrir Ticket'); ?></h2>
 <p><?php echo __('Please fill in the form below to open a new ticket.'); ?></p>
-<form id="ticketForm" method="post" action="open_1.php" enctype="multipart/form-data" class="d-none">
-    <?php csrf_token(); ?>
-    <input type="hidden" name="a" value="open">
 
-    <div class="mb-3">
-        <select id="topicId" name="topicId" class="form-select" onchange="javascript:
-                                var data = $(':input[name]', '#dynamic-form').serialize();
-                                    $.ajax('ajax.php/form/help-topic/' + this.value,{
-                                        data: data,
-                                        dataType: 'json',
-                                        success: function(json) {
-                                            $('#dynamic-form').empty().append(json.html);
-                                            $(document.head).append(json.media);
-                                        }
-                                });
-
-                                $(':input[name]', '#dynamic-form').serialize();
-                                    $.ajax('ajax.php/form/topic-notes/' + this.value,{
-                                        data: data,
-                                        dataType: 'json',
-                                        success: function(json) {
-                                            $('#descripcionTema').empty();
-                                            $('#descripcionTema').removeClass('alert alert-secondary');
-
-                                            if(json.notes !==null && json.notes.length > 0){
-                                                $('#descripcionTema').addClass('alert alert-secondary');
-                                                $('#descripcionTema').append(json.notes);
-                                            }
-                                        }
-                                });">
-            <option value="" selected="selected">
-                &mdash; <?php echo __('Select a Help Topic'); ?> &mdash;
-            </option>
-            <?php
-            $topics = Topic::getHelpTopicsByParent(23);
-            if ($topics) {
-                foreach ($topics as $id => $name) {
-                    echo sprintf('<option value="%d" %s>%s</option>', $id, ($info['topicId'] == $id) ? 'selected="selected"' : '', $name);
-                }
-            }
-            ?>
-        </select>
-        <font class="error text-center">&nbsp;<?php echo $errors['topicId']; ?></font>
-        <div id="descripcionTema"></div>
-    </div>
-
-    <?php
-        if (!$thisclient) {
-            $uform = UserForm::getUserForm()->getForm($_POST);
-
-            if ($_POST)
-                $uform->isValid();
-
-            $uform->render(array('staff' => false, 'mode' => 'create'));
-        } else { ?>
-    <div class="mb-3">
-       <!--  <input type="text" id="TextInput" class="form-control" placeholder="Nombre completo *"> -->
-       <p>
-       <?php echo __('Client'); ?>:
-        <?php echo Format::htmlchars($thisclient->getName()); ?>
-       </p>
-    </div>
-    <div class="mb-3">
-        <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico *"> -->
-        <p>
-        <?php echo __('Email'); ?>:
-                    <?php echo $thisclient->getEmail(); ?>
-        </p>
-    </div>
-    <?php } ?>
-
-    <button type="submit" class="btn btn-primary d-none">Submit</button>
-</form>
 
 <form id="ticketForm" method="post" action="open_1.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>
@@ -215,7 +143,7 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
                     <td>
                         <span class="captcha"><img src="captcha.php" border="0" align="left"></span>
                         &nbsp;&nbsp;
-                        <input id="captcha" type="text" name="captcha" size="6" autocomplete="off">
+                        <input id="captcha" type="text" name="captcha" size="6" autocomplete="off"><br>
                         <em><?php echo __('Enter the text shown on the image.'); ?></em>
                         <font class="error">*&nbsp;<?php echo $errors['captcha']; ?></font>
                     </td>
