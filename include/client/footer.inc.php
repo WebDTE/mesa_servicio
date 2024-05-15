@@ -7,7 +7,7 @@
               <div>
                 <?php echo __('Copyright &copy;'); ?>
                 <?php echo date('Y'); ?>
-                <?php echo __('https://mesadeservicio.prepaenlinea.mx'); ?> -
+                <?php echo __('https://prepaenlinea.sep.gob.mx/mesadeservicio/'); ?> -
                 <?php echo __('All rights reserved.'); ?>
                 </div>
             </div>
