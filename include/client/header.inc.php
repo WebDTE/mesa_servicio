@@ -37,8 +37,7 @@
     <meta name="keywords" content="osTicket, Customer support system, support ticket system">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/osticket.css?cc2f481" media="screen"/> -->
-    <!-- <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/theme.css?cc2f481" media="screen"/> -->
+   
     
     <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/print.css?cc2f481" media="print"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>scp/css/typeahead.css?cc2f481" media="screen" />
@@ -56,13 +55,14 @@
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-3.5.1.min.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.12.1.custom.min.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-timepicker-addon.js?cc2f481"></script>
-    <script src="<?php echo ROOT_PATH; ?>js/osticket.js?cc2f481"></script>
+    
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/filedrop.field.js?cc2f481"></script>
     <script src="<?php echo ROOT_PATH; ?>scp/js/bootstrap-typeahead.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor.min.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-plugins.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-osticket.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/select2.min.js?cc2f481"></script>
+    <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/osticket.js"></script>
 
     <?php
     if($ost && ($headers=$ost->getExtraHeaders())) {
