@@ -71,7 +71,7 @@ a {
     color: #333;
 }
 
-.for-tabla input, .for-tabla select{
+.for-tabla input, .for-tabla select, input[name="q"]{
     background-color: #F5F5F5!important;
     color: #888!important;
     max-width: 560px;

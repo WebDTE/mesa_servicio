@@ -38,7 +38,7 @@ foreach (Topic::objects()
     ->filter(array('faqs_count__gt'=>0))
     as $t) { ?>
         <div><a href="?topicId=<?php echo urlencode($t->getId()); ?>"
-            ><?php echo $t->getFullName(); ?></a></div>
+            >- <?php echo $t->getFullName(); ?></a></div>
 <?php } ?>
         </section>
         <section>
@@ -50,7 +50,7 @@ foreach (Category::objects()
     ->filter(array('faqs_count__gt'=>0))
     as $C) { ?>
         <div><a href="?cid=<?php echo urlencode($C->getId()); ?>"
-            ><?php echo $C->getLocalName(); ?></a></div>
+            >- <?php echo $C->getLocalName(); ?></a></div>
 <?php } ?>
         </section>
     </div>
