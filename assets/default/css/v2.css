@@ -124,7 +124,7 @@ a {
 }
 
 .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
-    width: 200px;
+    width: 320px;
     margin-top: 20px;
 }
 .fot-tabla input .search, input[name="q"]{
@@ -160,11 +160,14 @@ ul#kb {
     background-color: #fff;
     padding: .5em 1em;
 }
+
 .sidebar .header{
  background-color: transparent!important;
 }
+
 span.captcha {
     vertical-align: middle;
+    display: inline-block;
 }
 
 @media (max-width: 575.98px) { 
@@ -178,7 +181,7 @@ span.captcha {
     max-width: 340px;
    }
    .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
-    width: 120px;
+    width: 130px;
    }
    .fot-tabla input .search, input[name="q"] {
     width: 320px;
