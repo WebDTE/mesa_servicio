@@ -21,7 +21,7 @@
 
 <div class="col-12 col-md-4">
     <div class="sidebar">
-    <div class="searchbar text-center">
+    <div class="searchbar text-center mb-3">
         <form method="get" action="faq.php" class="for-tabla">
         <input type="hidden" name="a" value="search"/>
         <input type="text" name="q" class="search" placeholder="<?php

@@ -125,6 +125,7 @@ a {
 
 .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 200px;
+    margin-top: 20px;
 }
 .fot-tabla input .search, input[name="q"]{
     width: 380px;
@@ -157,7 +158,13 @@ ul#kb {
 .catt {
     font-weight: 600;
     background-color: #fff;
-    padding: 0 1em;
+    padding: .5em 1em;
+}
+.sidebar .header{
+ background-color: transparent!important;
+}
+span.captcha {
+    vertical-align: middle;
 }
 
 @media (max-width: 575.98px) { 
