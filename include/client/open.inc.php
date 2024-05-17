@@ -36,7 +36,11 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 
 <h1><?php echo __('Abrir Ticket');?></h1>
 <p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
-<p style="color:red"><?php echo __('Se requiere utilizar el correo registrado como principal, en caso de haberlo modificado o perdido, debe solicitarse la "Actualización de correo electrónico" en Temas de ayuda.');?></p>
+<p style="color:#5C5CAE;">
+    <strong>Aviso: </strong>
+    Se requiere utilizar el correo registrado como principal, en caso de haberlo modificado o perdido, debe solicitarse la "Actualización de correo electrónico" en Temas de ayuda.
+</p>
+
 
 <form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>

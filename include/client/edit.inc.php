@@ -22,9 +22,8 @@ if(!defined('OSTCLIENTINC') || !$thisclient || !$ticket || !$ticket->checkUserAc
 </table>
 <hr>
 <p style="text-align: center;">
-    <input type="submit" value="Update"/>
-    <input type="reset" value="Reset"/>
-    <input type="button" value="Cancel" onclick="javascript:
-        window.location.href='index.php';"/>
+    <input type="submit" value="Actualizar"/>
+    <input type="reset" value="Reestablecer"/>
+    <input type="button" value="Cancelar" onclick="javascript:window.location.href='index.php';"/>
 </p>
 </form>

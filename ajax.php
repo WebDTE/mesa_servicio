@@ -44,6 +44,9 @@ $dispatcher = patterns('',
         url_post('^upload/(\w+)?$', 'attach'),
         url_post('^upload/(?P<object>ticket|task)/(\w+)$', 'attach')
     )),
+    url('^/encuesta/', patterns('ajax.encuesta.php:EncuestaDependencia',
+        url_get('^dependencias/(?P<id>\d+)$', 'getDependencias')
+    )),        
     url('^/i18n/(?P<lang>[\w_]+)/', patterns('ajax.i18n.php:i18nAjaxAPI',
         url_get('(?P<tag>\w+)$', 'getLanguageFile')
     ))

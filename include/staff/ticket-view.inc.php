@@ -685,14 +685,6 @@ foreach (DynamicFormEntry::forTicket($ticket->getId()) as $form) {
         $isFile = ($field instanceof FileUploadField);
         $url = "#tickets/".$ticket->getId()."/field/".$id;
 ?>
-       <?php if($name == 'folio'){
-            $encargado = Ticket::getEncargadoCEFolio($field->getAnswer());
-       ?>
-        <tr style="background-color:#f8d7da;color:#721c24;border-color:#f5c6cb;">
-            <td width="200">Encargado de control escolar:</td> 
-            <td><?php echo $encargado; ?></td> 
-        </tr>
-        <?php }?>
         <tr>
             <td width="200"><?php echo Format::htmlchars($label); ?>:</td>
             <td id="<?php echo sprintf('inline-answer-%s', $field->getId()); ?>">

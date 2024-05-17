@@ -755,6 +755,11 @@ class VerySimpleModel {
         $dup->__new__ = true;
         return $dup;
     }
+    
+    function incrementCountPrope(){
+        $sql="UPDATE ost_help_topic SET contador = contador +1 where topic_id=47";
+        db_query($sql);
+    }
 }
 
 /**

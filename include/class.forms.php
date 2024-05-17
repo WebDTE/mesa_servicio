@@ -4394,12 +4394,12 @@ class PhoneNumberWidget extends Widget {
         $config = $this->field->getConfiguration();
         list($phone, $ext) = explode("X", $this->value);
         ?>
-        <input id="<?php echo $this->id; ?>" type="tel" name="<?php echo $this->name; ?>" value="<?php
+        <input id="<?php echo $this->id; ?>" type="tel" class="form-control" name="<?php echo $this->name; ?>" value="<?php
         echo Format::htmlchars($phone); ?>"/><?php
         // Allow display of extension field even if disabled if the phone
         // number being edited has an extension
         if ($ext || $config['ext']) { ?> <?php echo __('Ext'); ?>:
-            <input type="text" name="<?php
+            <input type="text" class="form-control" name="<?php
             echo $this->name; ?>-ext" value="<?php echo Format::htmlchars($ext);
                 ?>" size="5"/>
         <?php }
@@ -4609,7 +4609,7 @@ class BoxChoicesWidget extends Widget {
 ?>
         <label class="<?php echo implode(' ', $classes); ?>"
             for="<?php echo $id; ?>">
-        <input id="<?php echo $id; ?>" type="<?php echo $type; ?>"
+        <input id="<?php echo $id; ?>" type="<?php echo $type; ?>" class="form-control"
             name="<?php echo $this->name; ?>[]" <?php
             if ($this->value[$k]) echo 'checked="checked"'; ?> value="<?php
             echo Format::htmlchars($k); ?>"/>
@@ -4817,7 +4817,7 @@ class DatetimePickerWidget extends Widget {
             $datetime->setTimezone($timezone);
         }
         ?>
-        <input type="text" name="<?php echo $this->name; ?>"
+        <input type="text" name="<?php echo $this->name; ?>" class="form-control"
             id="<?php echo $this->id; ?>" style="display:inline-block;width:auto"
             value="<?php echo $this->value; ?>"
             size="<?php $config['time'] ? 20 : 12; ?>"
@@ -4912,7 +4912,7 @@ class TimePickerWidget extends Widget {
         }
 
         ?>
-        <input type="text" name="<?php echo $this->name; ?>"
+        <input type="text" name="<?php echo $this->name; ?>" class="form-control"
             id="<?php echo $this->id; ?>" style="display:inline-block;width:auto"
             value="<?php echo $this->value; ?>"
             size="10"
