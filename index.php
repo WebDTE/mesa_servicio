@@ -22,19 +22,19 @@ require(CLIENTINC_DIR.'header.inc.php');
 
     <div class="row mt-5">
         <div class="col-12 text-center mb-4">
-          <a href="<?php echo ROOT_PATH; ?>open_1.php" class="btn btnh btn-mes-ser ">Aspirantes</a>
+          <a href="<?php echo ROOT_PATH; ?>aspirantes.php" class="btn btnh btn-mes-ser ">Aspirantes</a>
         </div>
 
         <div class="col-12 text-center mb-4">
-          <a href="<?php echo ROOT_PATH; ?>open_2.php" class="btn btnh btn-mes-ser ">Estudiantes</a>
+          <a href="<?php echo ROOT_PATH; ?>estudiantes.php" class="btn btnh btn-mes-ser ">Estudiantes</a>
         </div>
 
         <div class="col-12 text-center mb-4">
-          <a href="<?php echo ROOT_PATH; ?>open_3.php" class="btn btnh btn-mes-ser ">Egresados</a>
+          <a href="<?php echo ROOT_PATH; ?>egresados.php" class="btn btnh btn-mes-ser ">Egresados</a>
         </div>
 
         <div class="col-12 text-center mb-4">
-          <a href="<?php echo ROOT_PATH; ?>open_4.php" class="btn btnh btn-mes-ser ">Instituciones externas</a>
+          <a href="<?php echo ROOT_PATH; ?>instituciones.php" class="btn btnh btn-mes-ser ">Instituciones externas</a>
         </div>
         
       </div>   
