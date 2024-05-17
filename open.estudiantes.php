@@ -34,10 +34,21 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 
 ?>
 
+<style> 
+    .ocultar { display: none; } 
+</style>
+
 <h1><?php echo __('Abrir Ticket');?></h1>
 <p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
+<p style="color:#5C5CAE;">
+    <strong>Aviso: </strong>
+    Se requiere utilizar el correo registrado como principal, en caso de haberlo modificado o perdido, 
+    debe solicitarse la "Actualización de correo electrónico" en Temas de ayuda, 
+    si es que no ha activado el correo oficial de  <strong><a href="formatos/CorreoInstitucional.pdf" target="_blank">@prepaenlinea</a></strong> consulte la siguiente 
+    <strong><a href="formatos/CorreoInstitucional.pdf" target="_blank">infografía</a></strong>.
+</p>
 
-<form id="ticketForm" method="post" action="egresados.php" enctype="multipart/form-data">
+<form id="ticketForm" method="post" action="estudiantes.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>
     <input type="hidden" name="a" value="open">
     <table width="1000" cellpadding="1" cellspacing="0" border="0">
@@ -51,37 +62,51 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
             <tr>
                 <td colspan="2">
                     <select id="topicId" name="topicId" 
-                            onchange="javascript:
+                        onchange="javascript:
+                            if(this.value === '44'){
+                                var url = window.location.protocol + '//' + window.location.host + '/';
+                                window.location = url + 'mesadeservicio/rce.php';
+                            }else{
                                 var data = $(':input[name]', '#dynamic-form').serialize();
-                                    $.ajax('ajax.php/form/help-topic/' + this.value,{
-                                        data: data,
-                                        dataType: 'json',
-                                        success: function(json) {
-                                            $('#dynamic-form').empty().append(json.html);
-                                            $(document.head).append(json.media);
-                                        }
-                                    });
-                                    
+                                $.ajax('ajax.php/form/help-topic/' + this.value,{
+                                    data: data,
+                                    dataType: 'json',
+                                    success: function(json) {
+                                        $('#dynamic-form').empty().append(json.html);
+                                        $(document.head).append(json.media);
+                                    }
+                                });
+
                                 $(':input[name]', '#dynamic-form').serialize();
-                                    $.ajax('ajax.php/form/topic-notes/' + this.value,{
-                                        data: data,
-                                        dataType: 'json',
-                                        success: function(json) {
-                                            $('#descripcionTema').empty();
-                                            $('#descripcionTema').removeClass('alert alert-secondary');
-                                                
-                                            if(json.notes !==null && json.notes.length > 0){
-                                                $('#descripcionTema').addClass('alert alert-secondary');
-                                                $('#descripcionTema').append(json.notes);
-                                            }
+
+                                $.ajax('ajax.php/form/topic-notes/' + this.value,{
+                                    data: data,
+                                    dataType: 'json',
+                                    success: function(json) {
+                                        $('#descripcionTema').empty();
+                                        $('#descripcionTema').removeClass('alert alert-secondary');
+
+                                        if(json.notes !== null && json.notes.length > 0){
+                                            $('#descripcionTema').addClass('alert alert-secondary');
+                                            $('#descripcionTema').append(json.notes);
                                         }
-                                });"
+                                        
+                                        if(json.crea_ticket !== null && json.crea_ticket === 0){
+                                            $('#buttonsTicket').css('display','none');
+                                            $('#static-form').addClass('ocultar');
+                                        }else{
+                                            $('#buttonsTicket').css('display','block');
+                                            $('#static-form').removeClass('ocultar');
+                                        }
+                                    }
+                                });                                
+                            } "  
                     >
                         <option value="" selected="selected">
                             &mdash; <?php echo __('Select a Help Topic');?> &mdash;
                         </option>
                         <?php
-                            $topics=Topic::getHelpTopicsByParent(25);
+                            $topics=Topic::getHelpTopicsByParent(24);
                             if($topics) {
                                 foreach($topics as $id =>$name) {
                                     echo sprintf('<option value="%d" %s>%s</option>',$id, ($info['topicId']==$id)?'selected="selected"':'', $name);
@@ -98,7 +123,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                 </td>
             </tr>
         </tbody>
-        <tbody>
+        <tbody id="static-form">
             <?php
             if (!$thisclient) {
                 $uform = UserForm::getUserForm()->getForm($_POST);
@@ -144,7 +169,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
         </tbody>
     </table>
     <hr/>
-    <p class="buttons" style="text-align:center;">
+    <p id="buttonsTicket" class="buttons" style="text-align:center; display:block;">
           <input type="submit" value="<?php echo __('Create Ticket');?>" class="btn" onclick="return confirmEmail();">
           <input type="reset" name="reset" value="<?php echo __('Reset');?>" class="btn">
           <input type="button" name="cancel" class="btn" value="<?php echo __('Cancel'); ?>" onclick="javascript:
@@ -158,16 +183,16 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 </form>
 
 <?php
-$cats = Category::getPopup_egresados();
+$cats = Category::getPopup_estudiantes();
 foreach ($cats as $C) { ?>
     <div class="modal fade" id="mensaje" tabindex="-1" role="dialog" aria-labelledby="mensajeLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header" style="justify-content: center;">
+            <div class="modal-header">
               <h5 class="modal-title" id="mensajeLabel">Aviso</h5>
             </div>
             <div class="modal-body"><?php echo $C->getDescription(); ?></div>
-            <div class="modal-footer" style="justify-content: center;">
+            <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
             </div>
         </div>

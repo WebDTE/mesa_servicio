@@ -66,7 +66,7 @@
                 <div class="col-md-12">
                     <input type="<?php echo($respuesta->tipo); ?>" 
                         name="res<?php echo($respuesta->id_pregunta); ?>"
-                        required="required"
+                        required="required" value="<?php echo($respuesta->id); ?>"
                         value="<?php echo($respuesta->id); ?>"
                         onclick="javascript:
                              $.ajax('ajax.php/encuesta/dependencias/' + this.value,{

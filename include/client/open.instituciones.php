@@ -163,11 +163,11 @@ foreach ($cats as $C) { ?>
     <div class="modal fade" id="mensaje" tabindex="-1" role="dialog" aria-labelledby="mensajeLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="justify-content: center;">
               <h5 class="modal-title" id="mensajeLabel">Aviso</h5>
             </div>
             <div class="modal-body"><?php echo $C->getDescription(); ?></div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="justify-content: center;">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
             </div>
         </div>

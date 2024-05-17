@@ -61,7 +61,8 @@ class Bootstrap {
         define('ENCUESTA_PREGUNTA','encuesta_pregunta');
         define('ENCUESTA_RESPUESTA','encuesta_respuesta');
         define('ENCUESTA_TICKET','encuesta_ticket');
-        
+        define('ENCUESTA_FOLIO','encuesta_folio');
+        define('ENCUESTA_MODULO','encuesta_modulo');
         #Tables being used sytem wide
         define('SYSLOG_TABLE',$prefix.'syslog');
         define('SESSION_TABLE',$prefix.'session');
@@ -365,6 +366,8 @@ ini_set('include_path', './'.PATH_SEPARATOR.INCLUDE_DIR.PATH_SEPARATOR.PEAR_DIR)
 require(INCLUDE_DIR.'class.encuestapregunta.php');
 require(INCLUDE_DIR.'class.encuestarespuesta.php');
 require(INCLUDE_DIR.'class.encuestaticket.php');
+require(INCLUDE_DIR.'class.encuestamodulo.php');
+require(INCLUDE_DIR.'class.encuestafolio.php');
 
 require(INCLUDE_DIR.'class.estudiante.php');
 require(INCLUDE_DIR.'class.osticket.php');

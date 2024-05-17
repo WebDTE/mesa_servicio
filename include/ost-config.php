@@ -39,10 +39,10 @@ define('ADMIN_EMAIL','jorge.arroyo@prepaenlinea.sep.gob.mx');
 # ---------------------------------------------------
 # Mysql Login info
 define('DBTYPE','mysql');
-define('DBHOST','127.0.0.1');
-define('DBNAME','osticket');
-define('DBUSER','osticket');
-define('DBPASS','osticket');
+define('DBHOST','10.3.22.236');
+define('DBNAME','controlescolar_new');
+define('DBUSER','controle');
+define('DBPASS','5gGYt67Ht4gest#');
 
 # Table prefix
 define('TABLE_PREFIX','ost_');
