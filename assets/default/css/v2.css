@@ -126,7 +126,9 @@ a {
 table{
     max-width: 560px;
 }
-
+input[type="checkbox"]{
+    height: 16px;
+}
 .for-tabla input[type="tel"],.for-tabla input#captcha, .for-tabla input[name="048172524a5028-ext"]{
     width: 320px;
     margin-top: 20px;
