@@ -1,5 +1,5 @@
 <div class="row">
-<div class="col-8">
+<div class="col-12 col-md-8">
 <?php
     $categories = Category::objects()
         ->exclude(Q::any(array(
@@ -38,13 +38,9 @@
 
             $count = $C->faq_count + $C->children_faq_count;
             ?>
-            <div class="col-12 d-flex p-3 mb-3 border rounded">
-            <div class="flex-shrink-0">
-              <img class="mr-3" src="<?php echo ROOT_PATH; ?>assets/default/images/kb_faq.png" alt="Generic placeholder image">
-            </div>
-
-            <div class="flex-grow-1 ms-3">
-            <h5 class="mt-0"><?php echo sprintf('<a href="faq.php?cid=%d" class="text-prepa-verde">%s %s</a>',
+            <li><i class="far fa-list-alt"></i>
+            <div style="margin-left:45px; margin-top:-25px">
+            <h4><?php echo sprintf('<a href="faq.php?cid=%d">%s %s</a>',
                 $C->getId(), Format::htmlchars($C->getLocalName()),
                 $count ? "({$count})": ''
               ); ?></h5>
@@ -82,10 +78,10 @@
     }
 ?>
 </div>
-<div class="col-4">
+<div class="col-12 col-md-4">
     <div class="sidebar">
-    <div class="searchbar">
-        <form method="get" action="faq.php">
+    <div class="searchbar text-center">
+        <form method="get" action="faq.php" class="for-tabla">
         <input type="hidden" name="a" value="search"/>
         <select name="topicId"  style="width:100%;max-width:100%"
             onchange="javascript:this.form.submit();">
@@ -102,9 +98,9 @@ foreach ($topics as $T) { ?>
         </form>
     </div>
     <br/>
-    <div class="bg-light rounded p-3 border">
+    <div class="content for-tabla ">
         <section>
-            <div class="header"><?php echo __('Other Resources'); ?></div>
+            <div class="catt text-center"><?php echo __('Other Resources'); ?></div>
         </section>
     </div>
     </div>

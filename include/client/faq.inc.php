@@ -5,14 +5,13 @@ $category=$faq->getCategory();
 
 ?>
 <div class="row">
-<div class="col-12 col-sm-8">
-<div class="">
-  <h1 class="d-none"><?php echo __('Frequently Asked Question');?></h1>
-  <div id="breadcrumbs" style="padding-top:2px;">
-      <a href="index.php"><?php echo __('All Categories');?></a>
-      &raquo; <a href="faq.php?cid=<?php echo $category->getId(); ?>"><?php
-      echo $category->getFullName(); ?></a>
-  </div>
+<div class="col-12 col-md-8">
+
+<h1><?php echo __('Frequently Asked Question');?></h1>
+<div id="breadcrumbs" style="padding-top:2px;">
+    <a href="index.php"><?php echo __('All Categories');?></a>
+    &raquo; <a href="faq.php?cid=<?php echo $category->getId(); ?>"><?php
+    echo $category->getFullName(); ?></a>
 </div>
 
 <div class="faq-content">
@@ -28,22 +27,22 @@ $category=$faq->getCategory();
 </div>
 </div>
 
-<div class="col-12 col-sm-4 pull-right">
+<div class="col-12 col-md-4">
 <div class="sidebar">
-<div class="searchbar">
-    <form method="get" action="faq.php">
+<div class="searchbar mb-3">
+    <form method="get" action="faq.php" class="for-tabla">
     <input type="hidden" name="a" value="search"/>
     <input type="text" name="q" class="search" placeholder="<?php
         echo __('Search our knowledge base'); ?>"/>
     <input type="submit" style="display:none" value="search"/>
     </form>
 </div>
-<div class="bg-light rounded p-3 border"><?php
+<div class="content for-tabla text-center"><?php
     if ($attachments = $faq->getLocalAttachments()->all()) { ?>
 <section>
     <strong><?php echo __('Attachments');?>:</strong>
 <?php foreach ($attachments as $att) { ?>
-    <div>
+    <div class="catt text-center">
     <a href="<?php echo $att->file->getDownloadUrl(['id' => $att->getId()]);
     ?>" class="no-pjax">
         <i class="icon-file"></i>
@@ -57,7 +56,7 @@ if ($faq->getHelpTopics()->count()) { ?>
 <section>
     <strong><?php echo __('Help Topics'); ?></strong>
 <?php foreach ($faq->getHelpTopics() as $T) { ?>
-    <div><?php echo $T->topic->getFullName(); ?></div>
+    <div class="catt text-center"><?php echo $T->topic->getFullName(); ?></div>
 <?php } ?>
 </section>
 <?php }

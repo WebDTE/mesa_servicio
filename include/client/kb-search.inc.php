@@ -1,5 +1,5 @@
 <div class="row">
-<div class="span8">
+<div class="col-12 col-md-8">
     <h1><?php echo __('Frequently Asked Questions');?></h1>
     <div><strong><?php echo __('Search Results'); ?></strong></div>
 <?php
@@ -19,30 +19,30 @@
 ?>
 </div>
 
-<div class="span4">
+<div class="col-12 col-md-4">
     <div class="sidebar">
-    <div class="searchbar">
-        <form method="get" action="faq.php">
+    <div class="searchbar text-center mb-3">
+        <form method="get" action="faq.php" class="for-tabla">
         <input type="hidden" name="a" value="search"/>
         <input type="text" name="q" class="form-control" placeholder="<?php
             echo __('Search our knowledge base'); ?>"/>
         <input type="submit" style="display:none" value="search"/>
         </form>
     </div>
-    <div class="content">
+    <div class="content for-tabla ">
         <section>
-            <div class="header"><?php echo __('Help Topics'); ?></div>
+            <div class="catt text-center"><?php echo __('Help Topics'); ?></div>
 <?php
 foreach (Topic::objects()
     ->annotate(array('faqs_count'=>SqlAggregate::count('faqs')))
     ->filter(array('faqs_count__gt'=>0))
     as $t) { ?>
         <div><a href="?topicId=<?php echo urlencode($t->getId()); ?>"
-            ><?php echo $t->getFullName(); ?></a></div>
+            >- <?php echo $t->getFullName(); ?></a></div>
 <?php } ?>
         </section>
         <section>
-            <div class="header"><?php echo __('Categories'); ?></div>
+            <div class="catt text-center"><?php echo __('Categories'); ?></div>
 <?php
 foreach (Category::objects()
     ->exclude(Q::any(array('ispublic'=>Category::VISIBILITY_PRIVATE)))
@@ -50,7 +50,7 @@ foreach (Category::objects()
     ->filter(array('faqs_count__gt'=>0))
     as $C) { ?>
         <div><a href="?cid=<?php echo urlencode($C->getId()); ?>"
-            ><?php echo $C->getLocalName(); ?></a></div>
+            >- <?php echo $C->getLocalName(); ?></a></div>
 <?php } ?>
         </section>
     </div>
