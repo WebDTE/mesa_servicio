@@ -2,18 +2,18 @@
 if(!defined('OSTCLIENTINC') || !$category || !$category->isPublic()) die('Access Denied');
 ?>
 <div class="row">
-<div class="span8">
-    <h1><?php echo $category->getFullName(); ?></h1>
+<div class="col-12 col-md-8">
+    <h1 class="h3"><?php echo $category->getFullName(); ?></h1>
 <p>
 <?php echo Format::safe_html($category->getLocalDescriptionWithImages()); ?>
 </p>
 <?php
 
 if (($subs=$category->getSubCategories(array('public' => true)))) {
-    echo '<div>';
+    echo '<div class="">';
     foreach ($subs as $c) {
-        echo sprintf('<div><i class="icon-folder-open-alt"></i>
-                <a href="faq.php?cid=%d">%s (%d)</a></div>',
+        echo sprintf('<div class="bg-light border rounded p-3 mb-3"><i class="fas fa-book text-prepa-coral"></i>
+                <a href="faq.php?cid=%d" class="text-prepa-verde">%s (%d)</a></div>',
                 $c->getId(),
                 $c->getLocalName(),
                 $c->getNumFAQs()
@@ -35,33 +35,32 @@ $faqs = FAQ::objects()
 if ($faqs->exists(true)) {
     echo '
          <h2>'.__('Frequently Asked Questions').'</h2>
-         <div id="faq">
-            <ol>';
+         <div class="d-flex flex-column" id="faq">';
 foreach ($faqs as $F) {
-        $attachments=$F->has_attachments?'<span class="Icon file"></span>':'';
+        //Borro el icono
+        $attachments=$F->has_attachments?'<i class="fas fa-question-circle text-prepa-morado"></i>':'';
         echo sprintf('
-            <li><a href="faq.php?id=%d" >%s &nbsp;%s</a></li>',
-            $F->getId(),Format::htmlchars($F->question), $attachments);
+            <div class="d-block bg-light rounded p-2 mb-2"><a href="faq.php?id=%d" class="text-prepa-verde"><i class="fas fa-question-circle text-prepa-coral"></i> %s &nbsp;%s</a></div>',
+            $F->getId(),Format::htmlchars($F->question), '');
     }
-    echo '  </ol>
-         </div>';
+    echo '</div>';
 } elseif (!$category->children) {
     echo '<strong>'.__('This category does not have any FAQs.').' <a href="index.php">'.__('Back To Index').'</a></strong>';
 }
 ?>
 </div>
 
-<div class="span4">
+<div class="col-12 col-md-4">
     <div class="sidebar">
-    <div class="searchbar">
+    <div class="searchbar mb-3">
         <form method="get" action="faq.php">
         <input type="hidden" name="a" value="search"/>
-        <input type="text" name="q" class="search" placeholder="<?php
+        <input type="text" name="q" class="form-control" placeholder="<?php
             echo __('Search our knowledge base'); ?>"/>
         <input type="submit" style="display:none" value="search"/>
         </form>
     </div>
-    <div class="content">
+    <div class="bg-light rounded p-3 border">
         <section>
             <div class="header"><?php echo __('Help Topics'); ?></div>
 <?php

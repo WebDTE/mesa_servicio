@@ -24,7 +24,7 @@
     <div class="searchbar">
         <form method="get" action="faq.php">
         <input type="hidden" name="a" value="search"/>
-        <input type="text" name="q" class="search" placeholder="<?php
+        <input type="text" name="q" class="form-control" placeholder="<?php
             echo __('Search our knowledge base'); ?>"/>
         <input type="submit" style="display:none" value="search"/>
         </form>

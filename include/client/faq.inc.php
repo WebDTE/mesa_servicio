@@ -5,19 +5,20 @@ $category=$faq->getCategory();
 
 ?>
 <div class="row">
-<div class="span8">
-
-<h1><?php echo __('Frequently Asked Question');?></h1>
-<div id="breadcrumbs" style="padding-top:2px;">
-    <a href="index.php"><?php echo __('All Categories');?></a>
-    &raquo; <a href="faq.php?cid=<?php echo $category->getId(); ?>"><?php
-    echo $category->getFullName(); ?></a>
+<div class="col-12 col-sm-8">
+<div class="">
+  <h1 class="d-none"><?php echo __('Frequently Asked Question');?></h1>
+  <div id="breadcrumbs" style="padding-top:2px;">
+      <a href="index.php"><?php echo __('All Categories');?></a>
+      &raquo; <a href="faq.php?cid=<?php echo $category->getId(); ?>"><?php
+      echo $category->getFullName(); ?></a>
+  </div>
 </div>
 
 <div class="faq-content">
-<div class="article-title flush-left">
+<h1 class="h2">
 <?php echo $faq->getLocalQuestion() ?>
-</div>
+</h1>
 <div class="faded"><?php echo sprintf(__('Last Updated %s'),
     Format::relativeTime(Misc::db2gmtime($faq->getUpdateDate()))); ?></div>
 <br/>
@@ -27,7 +28,7 @@ $category=$faq->getCategory();
 </div>
 </div>
 
-<div class="span4 pull-right">
+<div class="col-12 col-sm-4 pull-right">
 <div class="sidebar">
 <div class="searchbar">
     <form method="get" action="faq.php">
@@ -37,7 +38,7 @@ $category=$faq->getCategory();
     <input type="submit" style="display:none" value="search"/>
     </form>
 </div>
-<div class="content"><?php
+<div class="bg-light rounded p-3 border"><?php
     if ($attachments = $faq->getLocalAttachments()->all()) { ?>
 <section>
     <strong><?php echo __('Attachments');?>:</strong>

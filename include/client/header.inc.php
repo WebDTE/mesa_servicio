@@ -58,6 +58,7 @@
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-plugins.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-osticket.js?cc2f481"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/select2.min.js?cc2f481"></script>
+    <script src="https://kit.fontawesome.com/cdf4e31978.js" crossorigin="anonymous"></script>
 
     <?php
     if($ost && ($headers=$ost->getExtraHeaders())) {
@@ -104,7 +105,7 @@
                   <img src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php
                   echo $ost->getConfig()->getTitle(); ?>" style="width: 100%">
                 -->
-                <img src="images/logo.png" border=0 alt="<?php
+                <img src="<?php echo ROOT_PATH; ?>images/logo.png" border=0 alt="<?php
                 echo $ost->getConfig()->getTitle(); ?>" style="width: 100%; max-width:500px; display:block; margin: 0 auto;">
               </a>
             </div>

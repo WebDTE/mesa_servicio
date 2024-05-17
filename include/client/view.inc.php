@@ -30,7 +30,7 @@ if ($thisclient && $thisclient->isGuest()
 
 <?php } ?>
 
-<table width="800" cellpadding="1" cellspacing="0" border="0" id="ticketInfo">
+<table width="100%" cellpadding="1" cellspacing="0" border="0" id="ticketInfo">
     <tr>
         <td colspan="2" width="100%">
             <h1>
@@ -41,8 +41,6 @@ if ($thisclient && $thisclient->isGuest()
                 </b>
                 <small>#<?php echo $ticket->getNumber(); ?></small>
 <div class="pull-right">
-      <a class="action-button" href="tickets.php?a=print&id=<?php
-          echo $ticket->getId(); ?>"><i class="icon-print"></i> <?php echo __('Print'); ?></a>
 
 <?php if ($ticket->hasClientEditableFields()
         // Only ticket owners can edit the ticket details (and other forms)

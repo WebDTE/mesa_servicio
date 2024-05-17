@@ -13,7 +13,7 @@ class DynamicFormsAjaxAPI extends AjaxController {
             $field->render();
         }
     }
-
+    
     function getNotesForHelpTopic($topic_id) {
         if (!$_SERVER['HTTP_REFERER']){
             Http::response(403, 'Forbidden.');
@@ -23,7 +23,10 @@ class DynamicFormsAjaxAPI extends AjaxController {
             Http::response(404, 'No such help topic');
         }
         
-        return $this->encode(array( 'notes' => $topic->notes));
+        return $this->encode(array(
+            'notes' => $topic->notes,
+            'crea_ticket' => $topic->crea_ticket,
+        ));
     }
     
     function getFormsForHelpTopic($topic_id, $client=false) {

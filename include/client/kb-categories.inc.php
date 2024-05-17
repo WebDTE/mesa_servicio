@@ -1,5 +1,5 @@
 <div class="row">
-<div class="span8">
+<div class="col-8">
 <?php
     $categories = Category::objects()
         ->exclude(Q::any(array(
@@ -27,7 +27,7 @@
        // ->filter(array('faq_count__gt' => 0));
     if ($categories->exists(true)) { ?>
         <div><?php echo __('Click on the category to browse FAQs.'); ?></div>
-        <ul id="kb">
+        <div class="d-flex flex-column" id="kb">
 <?php
         foreach ($categories as $C) {
             // Don't show subcategories with parents.
@@ -38,21 +38,25 @@
 
             $count = $C->faq_count + $C->children_faq_count;
             ?>
-            <li><i></i>
-            <div style="margin-left:45px">
-            <h4><?php echo sprintf('<a href="faq.php?cid=%d">%s %s</a>',
+            <div class="col-12 d-flex p-3 mb-3 border rounded">
+            <div class="flex-shrink-0">
+              <img class="mr-3" src="<?php echo ROOT_PATH; ?>assets/default/images/kb_faq.png" alt="Generic placeholder image">
+            </div>
+
+            <div class="flex-grow-1 ms-3">
+            <h5 class="mt-0"><?php echo sprintf('<a href="faq.php?cid=%d" class="text-prepa-verde">%s %s</a>',
                 $C->getId(), Format::htmlchars($C->getLocalName()),
                 $count ? "({$count})": ''
-                ); ?></h4>
+              ); ?></h5>
             <div class="faded" style="margin:10px 0">
                 <?php echo Format::safe_html($C->getLocalDescriptionWithImages()); ?>
             </div>
 <?php
             if (($subs=$C->getPublicSubCategories())) {
-                echo '<p/><div style="padding-bottom:15px;">';
+                echo ' <div class="media mt-3">';
                 foreach ($subs as $c) {
-                    echo sprintf('<div><i class="icon-folder-open"></i>
-                            <a href="faq.php?cid=%d">%s (%d)</a></div>',
+                    echo sprintf('<div class="media-body mb-3"><i class="fas fa-book text-prepa-coral"></i>
+                            <a href="faq.php?cid=%d" class="text-prepa-verde">%s (%d)</a></div>',
                             $c->getId(),
                             $c->getLocalName(),
                             $c->faq_count
@@ -69,16 +73,16 @@
                 </a></div>
 <?php       } ?>
             </div>
-            </li>
+          </div>
 <?php   } ?>
-       </ul>
+  </div>
 <?php
     } else {
         echo __('NO FAQs found');
     }
 ?>
 </div>
-<div class="span4">
+<div class="col-4">
     <div class="sidebar">
     <div class="searchbar">
         <form method="get" action="faq.php">
@@ -98,7 +102,7 @@ foreach ($topics as $T) { ?>
         </form>
     </div>
     <br/>
-    <div class="content">
+    <div class="bg-light rounded p-3 border">
         <section>
             <div class="header"><?php echo __('Other Resources'); ?></div>
         </section>

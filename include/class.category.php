@@ -300,6 +300,26 @@ class Category extends VerySimpleModel {
     static function getFeatured() {
         return self::objects()->filter(array('ispublic'=>self::VISIBILITY_FEATURED));
     }
+    
+    static function getPopup() {
+        return self::objects()->filter(array('name'=>'popup','ispublic'=>1));
+    }
+    
+    static function getPopup_estudiantes() {
+        return self::objects()->filter(array('name'=>'popup_estudiantes','ispublic'=>1));
+    }
+    
+    static function getPopup_aspirantes() {
+        return self::objects()->filter(array('name'=>'popup_aspirantes','ispublic'=>1));
+    }
+    
+    static function getPopup_egresados() {
+        return self::objects()->filter(array('name'=>'popup_egresados','ispublic'=>1));
+    }
+    
+    static function getPopup_instituciones() {
+        return self::objects()->filter(array('name'=>'popup_instituciones','ispublic'=>1));
+    }
 
     static function getCategories($criteria=null, $localize=true) {
         static $categories = null;

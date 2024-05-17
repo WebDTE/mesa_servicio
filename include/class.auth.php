@@ -250,7 +250,7 @@ abstract class AuthenticationBackend {
         }
 
         if (!$result)
-            $result = new AccessDenied(__('Access denied'));
+            $result = new AccessDenied(__('Los datos ingresados son incorrectos.'));
 
         if ($result && $result instanceof AccessDenied)
             $errors['err'] = $result->reason;

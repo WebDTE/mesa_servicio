@@ -7,6 +7,7 @@
 		<meta name="description" content="customer support platform">
 		<meta name="keywords" content="osTicket, Customer support system, support ticket system">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" href="/mesadeservicio/css/osticket.css?cc2f481" media="screen"/>
 		<link rel="stylesheet" href="/mesadeservicio/assets/default/css/theme.css?cc2f481" media="screen"/>
 		<link rel="stylesheet" href="/mesadeservicio/assets/default/css/print.css?cc2f481" media="print"/>
@@ -19,193 +20,132 @@
 		<link type="text/css" rel="stylesheet" href="/mesadeservicio/css/flags.css?cc2f481"/>
 		<link type="text/css" rel="stylesheet" href="/mesadeservicio/css/rtl.css?cc2f481"/>
 		<link type="text/css" rel="stylesheet" href="/mesadeservicio/css/select2.min.css?cc2f481"/>
+		<script src="https://kit.fontawesome.com/cdf4e31978.js" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
-		<div id="container">
+		<div id="" class="container">
 			<div id="header">
-				<a class="pull-left" id="logo" href="/mesadeservicio/index.php" title="Centro de soporte">
-					<span class="valign-helper"></span>
-					<img src="/mesadeservicio/logo.php" border=0 alt="osTicketPL">
-				</a>
-			</div>
+            <div class="">
+              <!-- <a class="pull-left" id="logo" href="/mesadeservicio/index.php" Le quité el ID container, para volverlo responsivo pero no estoy seguro si el ID es importante así que lo dejo comentado-->
+              <a class="" id="" href="/mesadeservicio/index.php" title="Centro de soporte">
+              <!--
+                  <img src="/mesadeservicio/logo.php" border=0 alt="mesadeservicio" style="width: 100%">
+                -->
+                <img src="/mesadeservicio/images/logo.png" border="0" alt="mesadeservicio" style="width: 100%; max-width:500px; display:block; margin: 0 auto;">
+              </a>
+            </div>
+        </div>
 			<div class="clear"></div>
 			<ul id="nav" class="flush-left">
 				<li><a class=" home" href="/mesadeservicio/index.php">Inicio</a></li>
 				<li><a class=" status" href="/mesadeservicio/view.php">Ver Estado de un Ticket</a></li>
 				<li><a class=" kb" href="/mesadeservicio/kb/index.php">Preguntas frecuentes</a></li>
-				<li><a class=" active kb" href="/mesadeservicio/ta/temasAyuda.html">Consulta los requisitos para cada tema</a></li>
+				<li><a class="active questions" href="/mesadeservicio/ta/temasAyuda.html">Consulta los requisitos para cada tema</a></li>
+				<li style="float:right">
+				</li>
 			</ul>
 			<div id="content">
 				<div class="row">
-					<div class="span8">
-						<div>Consulta de los requisitos por tema.</div>
-							<ul id="kb">
-								<li>
-									<i></i>
-									<div style="margin-left:45px; padding-bottom:10px;">
-										<h2><a href="faq.php?cid=1">Estudiantes</a></h2>
-										<p/><p/>
-										<div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a href="faq.php?cid=7">Actualización del correo</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo de máximo 1 MB en formato: pdf, jpg, jpeg, gif, png</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a>Copia de identificación oficial (INE, pasaporte, licencia de conducir), en caso de ser menor de edad, anexar identificación del tutor legal. &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Baja definitiva</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo pdf máximo de 1 MB con lo siguiente:</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a href="../formatos/CARTA_RESPONSIVA.docx" >Firma de carta responsiva (Clic para descargar) &nbsp;</a></li>
-											<li><a>Copia de identificación oficial (INE, pasaporte, licencia de conducir), en caso de ser menor de edad, anexar identificación del tutor legal. &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Constancias de estudio</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo máximo de 1 MB </p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a>En caso de requerir una constancia con datos específicos, anexar el soporte o documento donde le soliciten dichos datos. &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Equivalencia de estudios</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo máximo de 1 MB </p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a>Resolución de equivalencia de estudios. &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Invasión de nivel</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo pdf máximo de 1 MB</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a href="../formatos/CARTA_RESPONSIVA.docx">Firma de carta responsiva (Clic para descarga) &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Reactivación del servicio educativo por suspensión</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo máximo de 1 MB</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a>Certificado de secundaria y/o &nbsp;</a></li>
-											<li><a>Acta de nacimiento &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Reincorporación de estudiantes en baja definitiva</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo máximo de 1 MB</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a>Firma de carta compromiso &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Revisión o aclaración de calificaciones</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo máximo de 1 MB</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a>Portafolio de evidencias &nbsp;</a></li>
-											<li><a>Correo electrónico del Asesor Virtual y/o Tutor &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Seguro social estudiantil (IMSS)</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo máximo de 1MB</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a href="../formatos/CARTA_RESPONSIVA.docx">Firma de carta responsiva (Clic para descarga) &nbsp;</a></li>
-											<li><a href="https://youtu.be/55sHBNcjF_g">NSS (Número de Seguridad Social) (Clic para saber como obtenerlo) &nbsp;</a></li>
-											</ol>
-										 </div>
-										 <div style="padding-bottom:10px;">
-											<div>
-												<i class="icon-folder-open"></i>
-												<a>Tránsito de estudiantes del plan modular de Prepa Abierta a Prepa en Línea - SEP</a>
-											</div>
-										</div>
-										<div class="faded" style="margin:10px 0">
-											<p>Archivo máximo de 1 MB</p>            
-										</div>
-										<div id="faq">
-											<ol>
-											<li><a>Certificado parcial de estudios de Prepa Abierta (Plan 22 módulos) &nbsp;</a></li>
-											</ol>
-										 </div>
+					<div class="col-12">
+						<h1 class="h2">Consulta de los requisitos por tema.</h1>
+						<div class="d-flex flex-column">
+							<div class="d-flex border rounded p-3">
+								<div class="flex-shrink-0">
+		              <img class="mr-3" src="/mesadeservicio/assets/default/images/kb_requisitos.png" alt="Generic placeholder image">
+		            </div>
+								<div class="flex-grow-1 ms-3">
+		            	<h5 class="mt-0">Estudiantado</h5>
+									<!-- Este es el bloque Del requisito -->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Actualización del correo</h5>
+										<p class="text-secondary">Archivo de máximo 1 MB en formato: pdf, jpg, jpeg, gif, png</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Copia de identificación oficial (INE, pasaporte, licencia de conducir), en caso de ser menor de edad, anexar identificación del tutor legal. &nbsp;</li>
+										</ul>
 									</div>
-								</li>
-							</ul>
+									<!-- Este es el bloque Del requisito -->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Baja definitiva</h5>
+										<p class="text-secondary">Archivo pdf máximo de 1 MB con lo siguiente:</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i><a href="../formatos/CARTA_RESPONSIVA.docx" >Firma de carta responsiva (Clic para descargar) &nbsp;</a></li>
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Copia de identificación oficial (INE, pasaporte, licencia de conducir), en caso de ser menor de edad, anexar identificación del tutor legal.</li>
+										</ul>
+									</div>
+									<!-- Este es el bloque Del requisito -->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Constancias de estudio</h5>
+										<p class="text-secondary">Archivo máximo de 1 MB</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>En caso de requerir una constancia con datos específicos, anexar el soporte o documento donde le soliciten dichos datos.</li>
+										</ul>
+									</div>
+									<!-- Este es el bloque Del requisito -->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Equivalencia de estudios</h5>
+										<p class="text-secondary">Archivo máximo de 1 MB</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Resolución de equivalencia de estudios.</li>
+										</ul>
+									</div>
+									<!-- Este es el bloque Del requisito -->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Reactivación del servicio educativo por suspensión</h5>
+										<p class="text-secondary">Archivo máximo de 1 MB</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Certificado de secundaria</li>
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Acta de nacimiento</li>
+										</ul>
+									</div>
+									<!-- Este es el bloque Del requisito -->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Revisión o aclaración de calificaciones</h5>
+										<p class="text-secondary">Archivo máximo de 1 MB</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Portafolio de evidencias</li>
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Correo electrónico del Asesor Virtual y/o Tutor</li>
+										</ul>
+									</div>
+									<!-- Este es el bloque Del requisito IMSS-->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Seguro social estudiantil (IMSS)</h5>
+										<p class="text-secondary">Archivo máximo de 1 MB</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i><a href="../formatos/CARTA_RESPONSIVA_IMSS.pdf" target="_blank">Firma de carta responsiva (Clic para descarga) &nbsp;</a></li>
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i><a href="https://youtu.be/55sHBNcjF_g">NSS (Número de Seguridad Social) (Clic para saber como obtenerlo) &nbsp;</a></li>
+										</ul>
+									</div>
+                        						<!-- Este es el bloque Del requisito Modulo Simultaneo-->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Solicitud de m&oacute;dulo simultaneo</h5>
+										<p class="text-secondary">Archivo máximo de 1 MB</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i><a href="../formatos/cartacompromiso_modulosimultaneo.pdf" target="_blank">Firma de carta compromiso (Clic para descarga) &nbsp;</a></li>
+										</ul>
+									</div>                                                
+									<!-- Este es el bloque Del requisito -->
+									<div class="d-block mb-3 bg-light p-3">
+										<h5 class="h6"> <i class="fas fa-file-upload text-prepa-morado"></i> Tránsito de estudiantes del plan modular de Prepa Abierta a Prepa en Línea - SEP</h5>
+										<p class="text-secondary">Archivo máximo de 1 MB</p>
+										<ul class="list-unstyled">
+										<li class="p-3 mb-1"><i class="far fa-check-circle text-prepa-coral m-1"></i>Certificado parcial de estudios de Prepa Abierta (Plan 22 módulos)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="span4">
 						</div>
 					</div>
 				</div>
 			</div>
-		<div id="footer">
-			<p>
-				Derechos de autor &copy; 
-				2021 
-				https://mesadeservicio.prepaenlinea.mx - 
-				Todos los derechos reservados.</p>
-		</div>
+                <div id="footer">
+                    <p>
+                        <?php echo __('Copyright &copy;'); ?>
+                        <?php echo date('Y'); ?>
+                        <?php echo __('https://prepaenlinea.sep.gob.mx/mesadeservicio/'); ?> -
+                        <?php echo __('All rights reserved.'); ?></p>
+                </div>
 		<div id="overlay"></div>
 		<div id="loading">
 			<h4>Porfavor espera!</h4>

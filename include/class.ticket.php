@@ -1217,11 +1217,6 @@ implements RestrictedAccess, Threadable, Searchable {
         return $ticket->getDynamicFields($criteria);
     }
     
-    function getEncargadoCEFolio($folio){
-        $sql = "select concat(responsable, ' - ', responsable_correo) as datos from estudiante where folio=".$folio;
-        return db_result(db_query($sql));
-    }
-
     function getMissingRequiredField() {
         $fields = self::getMissingRequiredFields($this);
         return $fields ? $fields[0] : null;
@@ -4137,19 +4132,21 @@ implements RestrictedAccess, Threadable, Searchable {
             }
 
             //Make sure the open ticket limit hasn't been reached. (LOOP CONTROL)
-            if ($cfg->getMaxOpenTickets() > 0
+            if($__topic->topic_pid != 26){ //Para las instituciones externas no aplica el limite de tickets
+                if ($cfg->getMaxOpenTickets() > 0
                     && strcasecmp($origin, 'staff')
                     && ($_user=TicketUser::lookupByEmail($vars['email']))
                     && ($openTickets=$_user->getNumOpenTickets())
                     && ($openTickets>=$cfg->getMaxOpenTickets()) ) {
 
-                $errors = array('err' => __("You've reached the maximum open tickets allowed."));
-                $ost->logWarning(sprintf(_S('Ticket denied - %s'), $vars['email']),
-                        sprintf(_S('Max open tickets (%1$d) reached for %2$s'),
-                            $cfg->getMaxOpenTickets(), $vars['email']),
-                        false);
+                    $errors = array('err' => "Ya cuentas con un ticket en proceso, es necesario esperar a cerrar el ticket para generar uno nuevo.");
+                    $ost->logWarning(
+                            sprintf(_S('Ticket denied - %s'), $vars['email']),
+                            sprintf(_S('Max open tickets (%1$d) reached for %2$s'),$cfg->getMaxOpenTickets(), $vars['email']),
+                            false);
 
-                return 0;
+                    return 0;
+                } 
             }
 
             // Allow vars to be changed in ticket filter and applied to the user
@@ -4331,11 +4328,16 @@ implements RestrictedAccess, Threadable, Searchable {
         $vars['ticket'] = $ticket;
         self::filterTicketData($origin, $vars,array_merge(array($form), $topic_forms), $user, true);
 
-        /***GUARDA EL TOKEN PARA QUE EL USUARIO PUEDA ACCEDER A LA MESA - TOKEN USADO DESDE EL SISGECE******/
+        /***GUARDA EL TOKEN PARA QUE EL USUARIO PUEDA ACCEDER A LA MESA - TOKEN USADO DESDE EL SIGECE******/
         $authtoken = sprintf('%s%dx%s','o',1,Base32::encode(pack('VV',$user->getId(),$ticket->getId())));
         $authtoken .= substr(base64_encode( md5($user->getId().$ticket->getCreateDate().$ticket->getId().SECRET_SALT, true)), 8);
+        
         $sql="UPDATE ost_ticket SET token='".$authtoken."' where ticket_id=".$ticket->getId();
         db_query($sql);
+        
+//        $ticket->token = $authtoken;
+//        if (!$ticket->save())
+//            return null;
         
         // Save the (common) dynamic form
         // Ensure we have a subject

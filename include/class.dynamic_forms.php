@@ -1895,7 +1895,7 @@ class TypeaheadSelectionWidget extends ChoicesWidget {
             );
         ?>
         <span style="display:inline-block">
-        <input type="text" size="30" name="<?php echo $this->name; ?>_name"
+        <input type="text" class="form-control" size="30" name="<?php echo $this->name; ?>_name"
             id="<?php echo $this->name; ?>" value="<?php echo Format::htmlchars($name); ?>"
             placeholder="<?php echo $config['prompt'];
             ?>" autocomplete="off" />
