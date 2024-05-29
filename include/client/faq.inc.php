@@ -15,9 +15,9 @@ $category = $faq->getCategory();
         </div>
 
         <div class="faq-content">
-            <h1 class="h2">
+            <h2>
                 <?php echo $faq->getLocalQuestion() ?>
-            </h1>
+            </h2>
             <div class="faded"><?php echo sprintf(
                                     __('Last Updated %s'),
                                     Format::relativeTime(Misc::db2gmtime($faq->getUpdateDate()))
