@@ -9,12 +9,17 @@ body{
 }
 h1{
     font-size: 36px;
-    font-weight: 300;
+    font-weight: 500;
     text-align: center;
 }
 h2{
     font-size: 28px;
-    text-align: left;
+    text-align: center;
+}
+h3{
+    font-size: 20px;
+    text-align: center;
+    padding: 1em 0;
 }
 h6{
     font-size: 20px;
@@ -25,12 +30,16 @@ h5 a{
     color: #7C2C82;
     font-weight: 300;
 }
+#header {
+  padding: 3em 0;
+}
+
 .titulo{
     color:#7C2C82;
     font-size: 40px;
     font-weight: 700;
     text-decoration: none;
-    line-height: 30px;
+    line-height: 40px;
     text-align: center;
 }
 .titulo span{
@@ -160,7 +169,7 @@ input[type="checkbox"]{
     font-size: 16px;
 }
 
-ul#kb {
+#kb li {
     list-style: none;
 }
 
@@ -179,6 +188,17 @@ span.captcha {
     display: inline-block;
 }
 
+#landing_page p[style="text-align:justify;"]{
+    text-align: center!important;
+}
+#content p{
+    text-align: center!important;
+}
+
+#descripcionTema p{
+text-align: left!important;
+}
+
 @media (max-width: 575.98px) { 
     #topicId{
     width: 340px;
@@ -194,4 +214,8 @@ span.captcha {
    .fot-tabla input .search, input[name="q"] {
     width: 320px;
    }
+   .titulo span{
+    position: absolute;
+    top: -20px;
+}
  }

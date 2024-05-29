@@ -1,35 +1,36 @@
 <div class="row">
     <div class="col-12 col-md-8">
-        <?php
-        $categories = Category::objects()
-            ->exclude(Q::any(array(
-                'ispublic' => Category::VISIBILITY_PRIVATE,
-                Q::all(array(
-                    'faqs__ispublished' => FAQ::VISIBILITY_PRIVATE,
-                    'children__ispublic' => Category::VISIBILITY_PRIVATE,
-                    'children__faqs__ispublished' => FAQ::VISIBILITY_PRIVATE,
-                ))
-            )))
-            //->annotate(array('faq_count'=>SqlAggregate::COUNT('faqs__ispublished')));
-            ->annotate(array('faq_count' => SqlAggregate::COUNT(
-                SqlCase::N()
-                    ->when(array(
-                        'faqs__ispublished__gt' => FAQ::VISIBILITY_PRIVATE
-                    ), 1)
-                    ->otherwise(null)
-            )))
-            ->annotate(array('children_faq_count' => SqlAggregate::COUNT(
-                SqlCase::N()
-                    ->when(array(
-                        'children__faqs__ispublished__gt' => FAQ::VISIBILITY_PRIVATE
-                    ), 1)
-                    ->otherwise(null)
-            )));
+            <?php
+            $categories = Category::objects()
+                ->exclude(Q::any(array(
+                    'ispublic' => Category::VISIBILITY_PRIVATE,
+                    Q::all(array(
+                        'faqs__ispublished' => FAQ::VISIBILITY_PRIVATE,
+                        'children__ispublic' => Category::VISIBILITY_PRIVATE,
+                        'children__faqs__ispublished' => FAQ::VISIBILITY_PRIVATE,
+                    ))
+                )))
+                //->annotate(array('faq_count'=>SqlAggregate::COUNT('faqs__ispublished')));
+                ->annotate(array('faq_count' => SqlAggregate::COUNT(
+                    SqlCase::N()
+                        ->when(array(
+                            'faqs__ispublished__gt' => FAQ::VISIBILITY_PRIVATE
+                        ), 1)
+                        ->otherwise(null)
+                )))
+                ->annotate(array('children_faq_count' => SqlAggregate::COUNT(
+                    SqlCase::N()
+                        ->when(array(
+                            'children__faqs__ispublished__gt' => FAQ::VISIBILITY_PRIVATE
+                        ), 1)
+                        ->otherwise(null)
+                )));
 
-        // ->filter(array('faq_count__gt' => 0));
-        if ($categories->exists(true)) { ?>
-            <div><?php echo __('Click on the category to browse FAQs.'); ?></div>
-            <div class="d-flex flex-column" id="kb">
+            // ->filter(array('faq_count__gt' => 0));
+            if ($categories->exists(true)) { ?>
+
+        <div><?php echo __('Click on the category to browse FAQs.'); ?></div>
+        <div class="d-flex flex-column" id="kb">
                 <?php
                 foreach ($categories as $C) {
                     // Don't show subcategories with parents.
@@ -42,51 +43,51 @@
 
                     $count = $C->faq_count + $C->children_faq_count;
                 ?>
-                    <li><i class="far fa-list-alt"></i>
-                        <div style="margin-left:45px; margin-top:-25px">
-                            <h4><?php echo sprintf(
-                                    '<a href="faq.php?cid=%d">%s %s</a>',
-                                    $C->getId(),
-                                    Format::htmlchars($C->getLocalName()),
-                                    $count ? "({$count})" : ''
-                                ); ?>
-                            </h4>
-                            <div class="faded" style="margin:10px 0">
-                                <?php echo Format::safe_html($C->getLocalDescriptionWithImages()); ?>
-                            </div>
-                            <?php
-                            if (($subs = $C->getPublicSubCategories())) {
-                                echo ' <div class="media mt-3">';
-                                foreach ($subs as $c) {
-                                    echo sprintf(
-                                        '<div class="media-body mb-3"><i class="fas fa-book text-prepa-coral"></i>
-                                <a href="faq.php?cid=%d" class="text-prepa-verde">%s (%d)</a></div>',
-                                        $c->getId(),
-                                        $c->getLocalName(),
-                                        $c->faq_count
-                                    );
-                                }
-                                echo '</div>';
+            <li><i class="fas fa-star-of-life"></i>
+                <div style="margin-left:45px; margin-top:-25px">
+                    <h4><?php echo sprintf(
+                            '<a href="faq.php?cid=%d">%s %s</a>',
+                            $C->getId(),
+                            Format::htmlchars($C->getLocalName()),
+                            $count ? "({$count})" : ''
+                        ); ?>
+                    </h4>
+                    <div class="faded" style="margin:10px 0">
+                        <?php echo Format::safe_html($C->getLocalDescriptionWithImages()); ?>
+                    </div>
+                        <?php
+                        if (($subs = $C->getPublicSubCategories())) {
+                            echo ' <div class="media mt-3">';
+                            foreach ($subs as $c) {
+                                echo sprintf(
+                                    '<div class="media-body mb-3"><i class="fas fa-book text-prepa-coral"></i>
+                            <a href="faq.php?cid=%d" class="text-prepa-verde">%s (%d)</a></div>',
+                                    $c->getId(),
+                                    $c->getLocalName(),
+                                    $c->faq_count
+                                );
                             }
+                            echo '</div>';
+                        }
 
-                            foreach ($C->faqs
-                                ->exclude(array('ispublished' => FAQ::VISIBILITY_PRIVATE)) as $F) { ?>
-                                <div class="popular-faq"><i class="icon-file-alt"></i>
-                                    <a href="faq.php?id=<?php echo $F->getId(); ?>">
-                                        <?php echo $F->getLocalQuestion() ?: $F->getQuestion(); ?>
-                                    </a>
-                                </div>
-                            <?php       } ?>
-                        </div>
-                    </li>
-            </div>
-        <?php   } ?>
+                        foreach ($C->faqs
+                            ->exclude(array('ispublished' => FAQ::VISIBILITY_PRIVATE)) as $F) { ?>
+                    <div class="popular-faq"><i class="icon-file-alt"></i>
+                        <a href="faq.php?id=<?php echo $F->getId(); ?>">
+                            <?php echo $F->getLocalQuestion() ?: $F->getQuestion(); ?>
+                        </a>
+                    </div>
+                        <?php       } ?>
+                </div>
+            </li>
+        </div>
+                <?php   } ?>
     </div>
-<?php
-        } else {
-            echo __('NO FAQs found');
-        }
-?>
+                <?php
+                        } else {
+                            echo __('NO FAQs found');
+                        }
+                ?>
 
     <div class="col-12 col-md-4">
         <div class="sidebar">
@@ -100,8 +101,7 @@
                             ->annotate(array('has_faqs' => SqlAggregate::COUNT('faqs')))
                             ->filter(array('has_faqs__gt' => 0));
                         foreach ($topics as $T) { ?>
-                            <option value="<?php echo $T->getId(); ?>"><?php echo $T->getFullName();
-                                                                        ?></option>
+                            <option value="<?php echo $T->getId(); ?>"><?php echo $T->getFullName();?></option>
                         <?php } ?>
                     </select>
                 </form>

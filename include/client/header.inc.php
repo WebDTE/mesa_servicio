@@ -412,7 +412,7 @@
                 <div class="col-12 col-md-4 text-center text-md-end">
                 
                     <a href="<?php echo ROOT_PATH; ?>view.php" title="<?php echo __('Support Center'); ?>" class="btn btnh btn-consulta mb-3">Consulta ticket</a>
-                    <a href="ta/temasAyuda.html" class="btn btnh btn-formato mb-3">Formatos por tema</a>
+                    <a href="<?php echo ROOT_PATH; ?>ta/temasAyuda.html" title="<?php echo __('Support Center'); ?>" class="btn btnh btn-formato mb-3">Formatos por tema</a>
                 </div>
             </div>      
 
