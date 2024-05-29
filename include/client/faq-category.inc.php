@@ -3,7 +3,7 @@ if(!defined('OSTCLIENTINC') || !$category || !$category->isPublic()) die('Access
 ?>
 <div class="row">
 <div class="col-12 col-md-8">
-    <h1 class="h3"><?php echo $category->getFullName(); ?></h1>
+    <h1><?php echo $category->getFullName(); ?></h1>
 <p>
 <?php echo Format::safe_html($category->getLocalDescriptionWithImages()); ?>
 </p>
