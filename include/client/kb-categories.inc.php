@@ -43,7 +43,7 @@
 
                     $count = $C->faq_count + $C->children_faq_count;
                 ?>
-            <li><i class="fas fa-star-of-life"></i>
+            <li><i class="fas fa-list"></i>
                 <div style="margin-left:45px; margin-top:-25px">
                     <h4><?php echo sprintf(
                             '<a href="faq.php?cid=%d">%s %s</a>',
