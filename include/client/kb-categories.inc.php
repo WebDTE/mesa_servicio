@@ -30,7 +30,7 @@
             if ($categories->exists(true)) { ?>
 
         <div><?php echo __('Click on the category to browse FAQs.'); ?></div>
-        <div class="d-flex flex-column" id="kb">
+        <ul class="d-flex flex-column" id="kb">
                 <?php
                 foreach ($categories as $C) {
                     // Don't show subcategories with parents.
@@ -80,14 +80,16 @@
                         <?php       } ?>
                 </div>
             </li>
-        </div>
+        
                 <?php   } ?>
-    </div>
+        </ul>
                 <?php
                         } else {
                             echo __('NO FAQs found');
                         }
                 ?>
+    </div>
+                
 
     <div class="col-12 col-md-4">
         <div class="sidebar">
