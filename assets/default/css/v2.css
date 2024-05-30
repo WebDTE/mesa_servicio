@@ -215,7 +215,7 @@ text-align: left!important;
     width: 320px;
    }
    .titulo span{
-    position: absolute;
+    position: relative;
     top: -20px;
 }
  }
