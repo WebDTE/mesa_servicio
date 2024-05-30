@@ -401,15 +401,16 @@
         ?>
         <div id="header">
             <div class="row">
-                <div class="col-12 col-md-4 logo">
+                <div class="col-12 col-md-3 logo">
                     <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>">
-                        <img src="<?php echo ROOT_PATH; ?>images/logo.png" alt="<?php echo $ost->getConfig()->getTitle(); ?>">
+                        <i class="fas fa-home fs-1"></i>
                     </a>
                 </div>
-                <div class="col-12 col-md-4">
-                    <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>"><div class="titulo">MESA DE SERVICIO<br><span>PREPA EN LÍNEA-SEP</span></div></a>
+                <div class="col-12 col-md-6">
+                    
+                    <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>"><img src="<?php echo ROOT_PATH; ?>images/icono_mesaservicio.png" alt="<?php echo $ost->getConfig()->getTitle(); ?>" class="img-fluid"></a>
                 </div>
-                <div class="col-12 col-md-4 text-center text-md-end">
+                <div class="col-12 col-md-3 text-center text-md-end">
                 
                     <a href="<?php echo ROOT_PATH; ?>view.php" title="<?php echo __('Support Center'); ?>" class="btn btnh btn-consulta mb-3">Consulta ticket</a>
                     <a href="<?php echo ROOT_PATH; ?>ta/temasAyuda.html" title="<?php echo __('Support Center'); ?>" class="btn btnh btn-formato mb-3">Formatos por tema</a>
