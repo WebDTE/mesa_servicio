@@ -55,6 +55,9 @@ a {
     text-decoration: none;
     color: #7C2C82;
 }
+a:hover{
+    color: #4c1a51;
+}
 .btnh{
     line-height: 16px;
     font-size: 16px;
@@ -164,15 +167,6 @@ input[type="checkbox"]{
     margin: .5em 0;
 }
 
-.thread-body{
-    border-radius: 7px !important;
-    box-shadow: 2px 2px 3px 0 rgba(20, 20, 20, 0.3);   
-}
-
-.thread-body p{
-    font-size: 16px;
-}
-
 #kb li {
     list-style: none;
 }
@@ -199,17 +193,32 @@ span.captcha {
     text-align: center!important;
 }
 
+
+#content .faq-content-recuadro p, #content .faq-content-recuadro ul,#content .faq-content-recuadro ol{
+    text-align: left!important;
+    line-height: 2em!important;
+    font-size: 16px!important;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+}
+#content .faq-content-recuadro figure {
+    text-align: center;
+}
 #descripcionTema p{
 text-align: left!important;
+
 }
 
 .alert-secondary {
     color: #000;
     background-color:#c9c9c9;
-    border: 2px solid #7C2C82;
     margin-bottom: 30px;
+    box-shadow: 2px 2px 3px 0 rgba(20, 20, 20, 0.3);
 }
 
+.fa-home{
+    font-size: 55px;
+}
 
 
 @media (max-width: 575.98px) { 

@@ -23,7 +23,7 @@ $category = $faq->getCategory();
                                     Format::relativeTime(Misc::db2gmtime($faq->getUpdateDate()))
                                 ); ?></div>
             <br />
-            <div class="thread-body bleed">
+            <div class="faq-content-recuadro bg-light p-4 ">
                 <?php echo $faq->getLocalAnswerWithImages(); ?>
             </div>
         </div>

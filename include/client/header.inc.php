@@ -400,13 +400,13 @@
         }
         ?>
         <div id="header">
-            <div class="row">
+            <div class="row align-items-center justify-content-center">
                 <div class="col-12 col-md-3 logo">
                     <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>">
-                        <i class="fas fa-home fs-1"></i>
+                        <i class="fas fa-home"></i>
                     </a>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                     
                     <a href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>"><img src="<?php echo ROOT_PATH; ?>images/icono_mesaservicio.png" alt="<?php echo $ost->getConfig()->getTitle(); ?>" class="img-fluid"></a>
                 </div>

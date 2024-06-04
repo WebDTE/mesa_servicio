@@ -32,7 +32,7 @@ if ($_POST) {
                 </ul>
             </p>
             <br><br>
-            <table width="100%" cellpadding="1" cellspacing="0" border="0">
+            <table  cellpadding="1" cellspacing="0" border="0" class="mx-auto for-tabla">
                 <tr>
                     <td style="background-color:#C2D04C;"><div class="form-header" style="margin-bottom:0.5em"><b>Folio</b></div></td>
                     <td><?php echo($array[0]); ?></td>
@@ -66,7 +66,7 @@ if ($_POST) {
             
             <br/><br/>
             <p class="buttons" style="text-align:center;">
-                <a href="<?php echo ROOT_PATH; ?>rce.php" class="btn">Aceptar</a>
+                <a href="<?php echo ROOT_PATH; ?>rce.php" class="btn btnh btn-mes-ser">Aceptar</a>
             </p>
             <?php 
             require(CLIENTINC_DIR.'footer.inc.php'); 
