@@ -151,8 +151,8 @@
         <p>
             <?php echo __('Copyright &copy;'); ?>
             <?php echo date('Y'); ?>
-            <?php echo __('https://prepaenlinea.sep.gob.mx/mesadeservicio/'); ?> -
-            <?php echo __('<a href=""ROOT_PATH"/terminos.html">Términos y condiciones</a>'); ?></p>
+            <?php echo __('https://mesadeservicio.prepaenlinea.mx'); ?> -
+            <?php echo __('All rights reserved.'); ?></p>
     </div> -->
 
 
