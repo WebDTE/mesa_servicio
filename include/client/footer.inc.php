@@ -5,10 +5,11 @@
           <div class="row">
             <div class="col-12">
               <div>
-                <?php echo __('All rights reserved. &copy'); ?>
+                <?php echo __('All rights reserved.'); ?>
+                <?php echo __('&copy'); ?>
                 <?php echo date('Y'); ?>
                 <?php echo __('Prepa en Línea-SEP. Control Escolar.'); ?>
-                <?php echo __('<a href=""ROOT_PATH"/terminos.html">Términos y condiciones</a>'); ?>
+                <?php echo __('<a href=""ROOT_PATH/terminos.html"">Términos y condiciones</a>'); ?>
                 </div>
             </div>
           </div>
