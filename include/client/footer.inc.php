@@ -9,7 +9,7 @@
                 <?php echo __('&copy'); ?>
                 <?php echo date('Y'); ?>
                 <?php echo __('Prepa en Línea-SEP. Control Escolar.'); ?>
-                <?php echo __('<a href=""ROOT_PATH/terminos.html"">Términos y condiciones</a>'); ?>
+                <a href="<?php echo ROOT_PATH; ?>terminos.html">Términos y condiciones</a>
                 </div>
             </div>
           </div>
